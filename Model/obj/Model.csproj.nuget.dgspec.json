@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\flori\\repos\\TowerDefense\\Model\\Model.csproj": {}
+    "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Model\\Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\flori\\repos\\TowerDefense\\Model\\Model.csproj": {
+    "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\flori\\repos\\TowerDefense\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\flori\\repos\\TowerDefense\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\flori\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\flori\\repos\\TowerDefense\\Model\\obj\\",
+        "projectPath": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\adame\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\flori\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\adame\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.105\\RuntimeIdentifierGraph.json"
         }
       }
     }
