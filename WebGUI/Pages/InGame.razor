@@ -9,24 +9,27 @@
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 
-<MudLayout>
-    <MudMainContent>
-        @if (FieldList is not null)
-        {
-            @for (int i = 0; i < FieldList.GetMaxX(); i++)
+<div style="text-align: center ">
+    <MudLayout>
+        <MudMainContent>
+            @if (FieldList is not null)
             {
-                @for (int j = 0; j < FieldList.GetMinY(); j++)
+                @for (int i = 0; i < FieldList.GetMaxX(); i++)
                 {
-                    @if (FieldList.Contains(i, j))
+                    @for (int j = 0; j < FieldList.GetMinY(); j++)
                     {
-                        <img src="@FieldList.GetField(i,j).GetFieldType()" alt="image"/>
+                        @if (FieldList.Contains(i, j))
+                        {
+                            <img src="@FieldList.GetField(i,j).GetFieldType()" alt="image"/>
+                        }
                     }
+                    <br/>
                 }
-                <br/>
             }
-        }
-    </MudMainContent>
-</MudLayout>
+        </MudMainContent>
+    </MudLayout>
+</div>
+
 
 @code {
     
