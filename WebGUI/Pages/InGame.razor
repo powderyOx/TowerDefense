@@ -12,14 +12,10 @@
 <div style="text-align: center ">
     <MudLayout>
         <MudMainContent>
-            @if (FieldList is not null)
-            {
-                @for (int i = 0; i < FieldList.GetMaxX(); i++)
-                {
-                    @for (int j = 0; j < FieldList.GetMinY(); j++)
-                    {
-                        @if (FieldList.Contains(i, j))
-                        {
+            @if (FieldList is not null) {
+                @for (int i = 0; i < FieldList.GetMaxX(); i++) {
+                    @for (int j = 0; j < FieldList.GetMinY(); j++) {
+                        @if (FieldList.Contains(i, j)) {
                             <img src="@FieldList.GetField(i,j).GetFieldType()" alt="image"/>
                         }
                     }
