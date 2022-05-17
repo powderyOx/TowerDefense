@@ -1,0 +1,24 @@
+@page "/savedgames"
+@using Domain.Repositories.Interfaces
+@using Model.Entities
+@inject IRepository<SavedGame> _gameRepository;
+<h3>SavedGames</h3>
+
+@if (@GameList is not null) {
+    <ul>
+        @foreach (var games in GameList) {
+            <li><a href="">@games.Name</a></li>
+        }
+    </ul>
+}
+else {
+    <span>loading...</span>
+}
+
+@code {
+    public List<SavedGame> GameList { get; set; }
+    
+    protected override async Task OnParametersSetAsync() {
+        GameList = await _gameRepository.ReadAllAsync();
+    }
+}
