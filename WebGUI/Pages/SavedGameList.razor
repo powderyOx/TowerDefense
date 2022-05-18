@@ -2,16 +2,21 @@
 @using Domain.Repositories.Interfaces
 @using Model.Entities
 @inject IRepository<SavedGame> _gameRepository;
+@inject ISavedGameRepository _savedGameRepository
 
 <h3>SavedGames</h3>
 
 @if (@GameList is not null) {
-    <ul>
-        @foreach (var games in GameList) {
-            <li><a href="">@games.Name</a></li>
-            <li>@games.MapEntities</li>
+    @if (@Entities.Count > 0) {
+        @foreach (var games in Entities) {
+            <ul>
+                <li><a href="map/@games.MapEntities[0].MapId">@games.Name</a></li>
+            </ul>
         }
-    </ul>
+    }
+    else {
+        <p>No Games found!</p>
+    }
 }
 else {
     <span>loading...</span>
@@ -20,7 +25,13 @@ else {
 @code {
     public List<SavedGame> GameList { get; set; }
     
+    public List<SavedGame> Entities { get; set; }
+
     protected override async Task OnParametersSetAsync() {
         GameList = await _gameRepository.ReadAllAsync();
+
+        foreach (var i in GameList) {
+            Entities = await _savedGameRepository.ReadGraphAsync(x => x.SavedGameId == i.SavedGameId);
+        }
     }
 }

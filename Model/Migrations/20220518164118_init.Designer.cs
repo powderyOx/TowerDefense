@@ -10,7 +10,7 @@ using Model.Configurations;
 namespace Model.Migrations
 {
     [DbContext(typeof(TowerDbContext))]
-    [Migration("20220518133044_init")]
+    [Migration("20220518164118_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

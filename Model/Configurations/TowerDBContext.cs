@@ -30,9 +30,11 @@ public class TowerDbContext : DbContext {
     public TowerDbContext(DbContextOptions<TowerDbContext> dbContextOptions) : base(dbContextOptions) { }
 
     protected override void OnModelCreating(ModelBuilder builder) {
+        
         builder.Entity<Attacker>()
             .HasIndex(a => a.Name)
             .IsUnique();
+        
         builder.Entity<MapEntity>().HasKey(m => new {
             m.EntityId,
             m.MapId,

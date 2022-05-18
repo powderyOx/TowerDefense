@@ -749,11 +749,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\WebGUI.csproj",
+      "projectUniqueName": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\WebGUI.csproj",
       "projectName": "WebGUI",
-      "projectPath": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\WebGUI.csproj",
+      "projectPath": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\WebGUI.csproj",
       "packagesPath": "C:\\Users\\flori\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\obj\\",
+      "outputPath": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\flori\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -768,11 +768,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\flori\\source\\repos\\TowerDefense\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\flori\\source\\repos\\TowerDefense\\Domain\\Domain.csproj"
+            "C:\\Users\\flori\\repos\\TowerDefense\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\flori\\repos\\TowerDefense\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\flori\\source\\repos\\TowerDefense\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\flori\\source\\repos\\TowerDefense\\Model\\Model.csproj"
+            "C:\\Users\\flori\\repos\\TowerDefense\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\flori\\repos\\TowerDefense\\Model\\Model.csproj"
             }
           }
         }
@@ -816,7 +816,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.105\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
