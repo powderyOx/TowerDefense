@@ -7,9 +7,7 @@ namespace Domain.Repositories.Implementations;
 
 public class MapRepository : ARepository<GameMap>, IMapRepository
 {
-    public MapRepository(TowerDbContext dbContext) : base(dbContext)
-    {
-    }
+    public MapRepository(TowerDbContext dbContext) : base(dbContext) { }
 
     public async Task<GameMap?> ReadGraphAsync(int id)
         => await _table
