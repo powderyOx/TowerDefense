@@ -3,5 +3,5 @@
 public class DownLeftTurn : AField
 {
     public override string GetFieldType()
-        => "./image/f_down_right_turn.png";
+        => "./image/f_down_left_turn.png";
 }
