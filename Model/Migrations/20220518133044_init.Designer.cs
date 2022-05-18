@@ -10,7 +10,7 @@ using Model.Configurations;
 namespace Model.Migrations
 {
     [DbContext(typeof(TowerDbContext))]
-    [Migration("20220511125430_init")]
+    [Migration("20220518133044_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,7 +48,7 @@ namespace Model.Migrations
                     b.ToTable("ENTITIES_BT");
                 });
 
-            modelBuilder.Entity("Model.Entities.Map", b =>
+            modelBuilder.Entity("Model.Entities.GameMap", b =>
                 {
                     b.Property<int>("MapId")
                         .ValueGeneratedOnAdd()
@@ -58,6 +58,33 @@ namespace Model.Migrations
                     b.HasKey("MapId");
 
                     b.ToTable("MAPS");
+                });
+
+            modelBuilder.Entity("Model.Entities.Map.AField", b =>
+                {
+                    b.Property<int>("X")
+                        .HasColumnType("int")
+                        .HasColumnName("X");
+
+                    b.Property<int>("Y")
+                        .HasColumnType("int")
+                        .HasColumnName("Y");
+
+                    b.Property<string>("FIELD_TYPE")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("MapId")
+                        .HasColumnType("int")
+                        .HasColumnName("MAP_ID");
+
+                    b.HasKey("X", "Y");
+
+                    b.HasIndex("MapId");
+
+                    b.ToTable("FIELDS_ST");
+
+                    b.HasDiscriminator<string>("FIELD_TYPE").HasValue("AField");
                 });
 
             modelBuilder.Entity("Model.Entities.MapEntity", b =>
@@ -199,6 +226,80 @@ namespace Model.Migrations
                     b.ToTable("DEFENDERS");
                 });
 
+            modelBuilder.Entity("Model.Entities.Map.FieldTypes.DownLeftTurn", b =>
+                {
+                    b.HasBaseType("Model.Entities.Map.AField");
+
+                    b.ToTable("FIELDS_ST");
+
+                    b.HasDiscriminator().HasValue("DOWN_LEFT_TURN");
+                });
+
+            modelBuilder.Entity("Model.Entities.Map.FieldTypes.DownRightTurn", b =>
+                {
+                    b.HasBaseType("Model.Entities.Map.AField");
+
+                    b.ToTable("FIELDS_ST");
+
+                    b.HasDiscriminator().HasValue("DOWN_RIGHT_TURN");
+                });
+
+            modelBuilder.Entity("Model.Entities.Map.FieldTypes.EmptyField", b =>
+                {
+                    b.HasBaseType("Model.Entities.Map.AField");
+
+                    b.ToTable("FIELDS_ST");
+
+                    b.HasDiscriminator().HasValue("EMPTY_FIELD");
+                });
+
+            modelBuilder.Entity("Model.Entities.Map.FieldTypes.HorizontalStraight", b =>
+                {
+                    b.HasBaseType("Model.Entities.Map.AField");
+
+                    b.ToTable("FIELDS_ST");
+
+                    b.HasDiscriminator().HasValue("HORIZONTAL_STRAIGHT");
+                });
+
+            modelBuilder.Entity("Model.Entities.Map.FieldTypes.UpLeftTurn", b =>
+                {
+                    b.HasBaseType("Model.Entities.Map.AField");
+
+                    b.ToTable("FIELDS_ST");
+
+                    b.HasDiscriminator().HasValue("UP_LEFT_TURN");
+                });
+
+            modelBuilder.Entity("Model.Entities.Map.FieldTypes.UpRightTurn", b =>
+                {
+                    b.HasBaseType("Model.Entities.Map.AField");
+
+                    b.ToTable("FIELDS_ST");
+
+                    b.HasDiscriminator().HasValue("UP_RIGHT_TURN");
+                });
+
+            modelBuilder.Entity("Model.Entities.Map.FieldTypes.VerticalStraight", b =>
+                {
+                    b.HasBaseType("Model.Entities.Map.AField");
+
+                    b.ToTable("FIELDS_ST");
+
+                    b.HasDiscriminator().HasValue("VERTICAL_STRAIGHT");
+                });
+
+            modelBuilder.Entity("Model.Entities.Map.AField", b =>
+                {
+                    b.HasOne("Model.Entities.GameMap", "Map")
+                        .WithMany("Fields")
+                        .HasForeignKey("MapId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Map");
+                });
+
             modelBuilder.Entity("Model.Entities.MapEntity", b =>
                 {
                     b.HasOne("Model.Entities.Entity", "Entity")
@@ -207,14 +308,14 @@ namespace Model.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Model.Entities.Map", "Map")
+                    b.HasOne("Model.Entities.GameMap", "Map")
                         .WithMany()
                         .HasForeignKey("MapId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Model.Entities.SavedGame", "SavedGame")
-                        .WithMany()
+                        .WithMany("MapEntities")
                         .HasForeignKey("SavedGameId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -250,6 +351,16 @@ namespace Model.Migrations
                         .HasForeignKey("Model.Entities.Defender", "EntityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Model.Entities.GameMap", b =>
+                {
+                    b.Navigation("Fields");
+                });
+
+            modelBuilder.Entity("Model.Entities.SavedGame", b =>
+                {
+                    b.Navigation("MapEntities");
                 });
 #pragma warning restore 612, 618
         }

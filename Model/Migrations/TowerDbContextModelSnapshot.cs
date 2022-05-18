@@ -313,7 +313,7 @@ namespace Model.Migrations
                         .IsRequired();
 
                     b.HasOne("Model.Entities.SavedGame", "SavedGame")
-                        .WithMany()
+                        .WithMany("MapEntities")
                         .HasForeignKey("SavedGameId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -354,6 +354,11 @@ namespace Model.Migrations
             modelBuilder.Entity("Model.Entities.GameMap", b =>
                 {
                     b.Navigation("Fields");
+                });
+
+            modelBuilder.Entity("Model.Entities.SavedGame", b =>
+                {
+                    b.Navigation("MapEntities");
                 });
 #pragma warning restore 612, 618
         }

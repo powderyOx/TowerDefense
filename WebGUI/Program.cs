@@ -19,6 +19,7 @@ builder.Services.AddDbContext<TowerDbContext>(
 
 builder.Services.AddScoped<IRepository<SavedGame>,GameRepository>();
 builder.Services.AddScoped<IMapRepository, MapRepository>();
+builder.Services.AddScoped<ISavedGameRepository, SavedGameRepository>();
 
 
 var app = builder.Build();
