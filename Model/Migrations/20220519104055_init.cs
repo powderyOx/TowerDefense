@@ -57,24 +57,6 @@ namespace Model.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "SAVED_GAMES",
-                columns: table => new
-                {
-                    SAVED_GAME_ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    MONEY = table.Column<int>(type: "int", nullable: false),
-                    ROUND = table.Column<int>(type: "int", nullable: false),
-                    NAME = table.Column<string>(type: "varchar(45)", maxLength: 45, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    HP = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SAVED_GAMES", x => x.SAVED_GAME_ID);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "DEFENDERS",
                 columns: table => new
                 {
@@ -120,6 +102,31 @@ namespace Model.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "SAVED_GAMES",
+                columns: table => new
+                {
+                    SAVED_GAME_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    MAP_ID = table.Column<int>(type: "int", nullable: false),
+                    MONEY = table.Column<int>(type: "int", nullable: false),
+                    ROUND = table.Column<int>(type: "int", nullable: false),
+                    NAME = table.Column<string>(type: "varchar(45)", maxLength: 45, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    HP = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SAVED_GAMES", x => x.SAVED_GAME_ID);
+                    table.ForeignKey(
+                        name: "FK_SAVED_GAMES_MAPS_MAP_ID",
+                        column: x => x.MAP_ID,
+                        principalTable: "MAPS",
+                        principalColumn: "MAP_ID",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "ATTACKERS",
                 columns: table => new
                 {
@@ -153,7 +160,6 @@ namespace Model.Migrations
                 name: "MAP_HAS_ENTITIES",
                 columns: table => new
                 {
-                    MAP_ID = table.Column<int>(type: "int", nullable: false),
                     ENTITY_ID = table.Column<int>(type: "int", nullable: false),
                     SAVED_GAME_ID = table.Column<int>(type: "int", nullable: false),
                     X = table.Column<int>(type: "int", nullable: false),
@@ -161,18 +167,12 @@ namespace Model.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MAP_HAS_ENTITIES", x => new { x.ENTITY_ID, x.MAP_ID, x.SAVED_GAME_ID });
+                    table.PrimaryKey("PK_MAP_HAS_ENTITIES", x => new { x.ENTITY_ID, x.SAVED_GAME_ID });
                     table.ForeignKey(
                         name: "FK_MAP_HAS_ENTITIES_ENTITIES_BT_ENTITY_ID",
                         column: x => x.ENTITY_ID,
                         principalTable: "ENTITIES_BT",
                         principalColumn: "ENTITY_ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_MAP_HAS_ENTITIES_MAPS_MAP_ID",
-                        column: x => x.MAP_ID,
-                        principalTable: "MAPS",
-                        principalColumn: "MAP_ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_MAP_HAS_ENTITIES_SAVED_GAMES_SAVED_GAME_ID",
@@ -194,14 +194,14 @@ namespace Model.Migrations
                 column: "MAP_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MAP_HAS_ENTITIES_MAP_ID",
-                table: "MAP_HAS_ENTITIES",
-                column: "MAP_ID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_MAP_HAS_ENTITIES_SAVED_GAME_ID",
                 table: "MAP_HAS_ENTITIES",
                 column: "SAVED_GAME_ID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SAVED_GAMES_MAP_ID",
+                table: "SAVED_GAMES",
+                column: "MAP_ID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SAVED_GAMES_NAME",
@@ -231,10 +231,10 @@ namespace Model.Migrations
                 name: "ENTITIES_BT");
 
             migrationBuilder.DropTable(
-                name: "MAPS");
+                name: "SAVED_GAMES");
 
             migrationBuilder.DropTable(
-                name: "SAVED_GAMES");
+                name: "MAPS");
         }
     }
 }

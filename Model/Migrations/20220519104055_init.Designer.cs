@@ -10,7 +10,7 @@ using Model.Configurations;
 namespace Model.Migrations
 {
     [DbContext(typeof(TowerDbContext))]
-    [Migration("20220518164118_init")]
+    [Migration("20220519104055_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,10 +93,6 @@ namespace Model.Migrations
                         .HasColumnType("int")
                         .HasColumnName("ENTITY_ID");
 
-                    b.Property<int>("MapId")
-                        .HasColumnType("int")
-                        .HasColumnName("MAP_ID");
-
                     b.Property<int>("SavedGameId")
                         .HasColumnType("int")
                         .HasColumnName("SAVED_GAME_ID");
@@ -109,9 +105,7 @@ namespace Model.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Y");
 
-                    b.HasKey("EntityId", "MapId", "SavedGameId");
-
-                    b.HasIndex("MapId");
+                    b.HasKey("EntityId", "SavedGameId");
 
                     b.HasIndex("SavedGameId");
 
@@ -141,6 +135,10 @@ namespace Model.Migrations
                         .HasColumnType("int")
                         .HasColumnName("HP");
 
+                    b.Property<int>("MapId")
+                        .HasColumnType("int")
+                        .HasColumnName("MAP_ID");
+
                     b.Property<int>("Money")
                         .HasColumnType("int")
                         .HasColumnName("MONEY");
@@ -156,6 +154,8 @@ namespace Model.Migrations
                         .HasColumnName("ROUND");
 
                     b.HasKey("SavedGameId");
+
+                    b.HasIndex("MapId");
 
                     b.HasIndex("Name")
                         .IsUnique();
@@ -308,12 +308,6 @@ namespace Model.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Model.Entities.GameMap", "Map")
-                        .WithMany()
-                        .HasForeignKey("MapId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Model.Entities.SavedGame", "SavedGame")
                         .WithMany("MapEntities")
                         .HasForeignKey("SavedGameId")
@@ -322,9 +316,18 @@ namespace Model.Migrations
 
                     b.Navigation("Entity");
 
-                    b.Navigation("Map");
-
                     b.Navigation("SavedGame");
+                });
+
+            modelBuilder.Entity("Model.Entities.SavedGame", b =>
+                {
+                    b.HasOne("Model.Entities.GameMap", "Map")
+                        .WithMany()
+                        .HasForeignKey("MapId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Map");
                 });
 
             modelBuilder.Entity("Model.Entities.Attacker", b =>

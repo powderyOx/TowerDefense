@@ -2,7 +2,6 @@
 @using Domain.Repositories.Interfaces
 @using Model.Entities
 @inject IRepository<SavedGame> _gameRepository;
-@inject ISavedGameRepository _savedGameRepository
 @inject ILogger<SavedGame> _logger
 @inject NavigationManager _navManager
 
@@ -19,17 +18,15 @@
 @code {
     public SavedGame Game { get; set; } = new();
     public List<SavedGame> GameList { get; set; }
-
-    public SavedGame Jo { get; set; }
-
+    
     public string message { get; set; } = "";
 
 
     public async Task CreateGame() {
-
         Game.Money = 200;
         Game.Round = 1;
         Game.HP = 100;
+        Game.MapId = 1;
 
         GameList = await _gameRepository.ReadAllAsync();
 
@@ -38,9 +35,8 @@
         }
         else {
             await _gameRepository.CreateAsync(Game);
-            Jo = (await _savedGameRepository.ReadGraphAsync(s => s.SavedGameId == Game.SavedGameId)).First();
             _logger.LogInformation("Game created!");
-            _navManager.NavigateTo($"/map/{Jo.MapEntities}");
+            _navManager.NavigateTo($"/map/{Game.MapId}");
         }
     }
 

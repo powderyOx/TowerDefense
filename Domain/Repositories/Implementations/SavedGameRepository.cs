@@ -15,7 +15,4 @@ public class SavedGameRepository : ARepository<SavedGame>, ISavedGameRepository
             .Include(a => a.MapEntities)
             .Where(filter)
             .ToListAsync();
-            //.Where(s => s.SavedGameId == id)
-            //.Include(s => s.MapEntities)
-            //.SingleOrDefaultAsync();
 }

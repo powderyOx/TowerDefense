@@ -37,7 +37,6 @@ public class TowerDbContext : DbContext {
         
         builder.Entity<MapEntity>().HasKey(m => new {
             m.EntityId,
-            m.MapId,
             m.SavedGameId
         });
         
