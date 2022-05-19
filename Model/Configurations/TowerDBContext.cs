@@ -61,8 +61,7 @@ public class TowerDbContext : DbContext {
             .HasValue<UpLeftTurn>("UP_LEFT_TURN")
             .HasValue<UpRightTurn>("UP_RIGHT_TURN")
             .HasValue<VerticalStraight>("VERTICAL_STRAIGHT");
-        
-        
+
         builder.Entity<MapEntity>()
             .HasOne(s => s.SavedGame)
             .WithMany(m => m.MapEntities)

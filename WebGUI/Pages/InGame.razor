@@ -1,8 +1,10 @@
-@page "/map/{MapId:int}"
+@page "/map/{SavedGameId:int}"
 @using Model.Entities.Map
 @using Domain.Repositories.Interfaces
+@using Model.Entities
 @inherits LayoutComponentBase
-@inject IMapRepository _repository
+@inject IMapRepository _mapRepository
+@inject ISavedGameRepository _sgRepository
 
 
 <MudThemeProvider/>
@@ -10,6 +12,14 @@
 <MudSnackbarProvider/>
 
 <div style="text-align: center ">
+    <div class="m-auto">
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">@sg.Name</li>
+            <li class="list-group-item">@sg.Round</li>
+            <li class="list-group-item">@sg.HP</li>
+            <li class="list-group-item">@sg.Money</li>
+        </ul>
+    </div>
     <MudLayout>
         <MudMainContent>
             @if (FieldList is not null) {
@@ -28,18 +38,19 @@
 
 
 @code {
-    
     [Parameter]
-    public int MapId { get; set; }
+    public int SavedGameId { get; set; }
 
     public FieldList FieldList { get; set; }
 
+    public SavedGame sg { get; set; }
+
     protected async override Task OnInitializedAsync()
     {
-        var map = await _repository.ReadGraphAsync(MapId);
+        sg = await _sgRepository.ReadAsync(SavedGameId);
+        var map = await _mapRepository.ReadGraphAsync(sg.MapId);
 
-        if (map is not null)
-        {
+        if (map is not null) {
             FieldList = new FieldList(map.Fields);
         }
     }

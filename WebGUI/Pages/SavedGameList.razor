@@ -9,7 +9,7 @@
     @if (@GameList.Count > 0) {
         <ul>
         @foreach (var games in GameList) {
-            <li><a href="map/@games.MapId">@games.Name</a></li>
+            <li><a href="map/@games.SavedGameId">@games.Name</a></li>
         }
         </ul>
     }
