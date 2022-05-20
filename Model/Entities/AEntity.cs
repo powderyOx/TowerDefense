@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Model.Entities; 
 
 [Table("ENTITIES_BT")]
-public abstract class Entity {
+public abstract class AEntity {
     [Column("ENTITY_ID")]
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int EntityId { get; set; }

@@ -61,7 +61,6 @@ namespace Model.Migrations
                 columns: table => new
                 {
                     ENTITY_ID = table.Column<int>(type: "int", nullable: false),
-                    DEFENDER_ID = table.Column<int>(type: "int", nullable: false),
                     FIRE_RATE = table.Column<int>(type: "int", nullable: false),
                     RANGE = table.Column<int>(type: "int", nullable: false),
                     COST = table.Column<int>(type: "int", nullable: false),
@@ -131,7 +130,6 @@ namespace Model.Migrations
                 columns: table => new
                 {
                     ENTITY_ID = table.Column<int>(type: "int", nullable: false),
-                    ATTACKER_ID = table.Column<int>(type: "int", nullable: false),
                     SPEED = table.Column<int>(type: "int", nullable: false),
                     HP = table.Column<int>(type: "int", nullable: false),
                     SHIELD = table.Column<int>(type: "int", nullable: false),
@@ -162,8 +160,8 @@ namespace Model.Migrations
                 {
                     ENTITY_ID = table.Column<int>(type: "int", nullable: false),
                     SAVED_GAME_ID = table.Column<int>(type: "int", nullable: false),
-                    X = table.Column<int>(type: "int", nullable: false),
-                    Y = table.Column<int>(type: "int", nullable: false)
+                    X = table.Column<int>(type: "int", nullable: true),
+                    Y = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

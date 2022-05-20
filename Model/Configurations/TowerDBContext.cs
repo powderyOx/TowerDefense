@@ -11,7 +11,7 @@ public class TowerDbContext : DbContext {
     
     public DbSet<Attacker> Attackers { get; set; }
     public DbSet<Defender> Defenders { get; set; }
-    public DbSet<Entity> Entities { get; set; }
+    public DbSet<AEntity> Entities { get; set; }
     public DbSet<GameMap> Maps { get; set; }
     public DbSet<MapEntity> MapEntities { get; set; }
     public DbSet<SavedGame> SavedGames { get; set; }
