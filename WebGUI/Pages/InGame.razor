@@ -2,11 +2,9 @@
 @using Model.Entities.Map
 @using Domain.Repositories.Interfaces
 @using Model.Entities
-@using Domain.Repositories.Implementations
 @inherits LayoutComponentBase
 @inject IMapRepository _mapRepository
 @inject ISavedGameRepository _sgRepository
-@inject SavedGameRepository _SavedGameRepository
 
 
 <MudThemeProvider/>
@@ -39,6 +37,8 @@
 </div>
 
 
+
+
 @code {
     [Parameter]
     public int SavedGameId { get; set; }
@@ -46,12 +46,11 @@
     public FieldList FieldList { get; set; }
 
     public SavedGame sg { get; set; }
-    
+
     protected async override Task OnInitializedAsync()
     {
-        sg = await _sgRepository.ReadAsync(SavedGameId);
+        sg = await _sgRepository.ReadGraphAsync(SavedGameId); // geht ned
         var map = await _mapRepository.ReadGraphAsync(sg.MapId);
-        var me = await _sgRepository.ReadGraphAsync();
 
         if (map is not null) {
             FieldList = new FieldList(map.Fields);
