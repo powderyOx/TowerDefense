@@ -18,9 +18,10 @@ public class SavedGameRepository : ARepository<SavedGame>, ISavedGameRepository
     
      */
 
-    public async Task<SavedGame?> ReadGraphAsync(int id)
+    public async Task<List<SavedGame>?> ReadGraphAsync(Expression<Func<SavedGame, bool>> filter)
         => await _table
-            .Where(s => s.SavedGameId == id)
             .Include(m => m.MapEntities)
-            .SingleOrDefaultAsync();
+            .ThenInclude(m => m.Entity)
+            .Where(filter)
+            .ToListAsync();
 }

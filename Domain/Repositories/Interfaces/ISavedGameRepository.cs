@@ -4,5 +4,5 @@ using Model.Entities;
 namespace Domain.Repositories.Interfaces; 
 
 public interface ISavedGameRepository : IRepository<SavedGame> {
-    Task<SavedGame?> ReadGraphAsync(int id);
+    Task<List<SavedGame>?> ReadGraphAsync(Expression<Func<SavedGame, bool>> filter);
 }

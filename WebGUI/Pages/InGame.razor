@@ -20,7 +20,7 @@
             <li class="list-group-item">@sg.Money</li>
         </ul>
     </div>
-    <MudLayout>
+    <MudLayout> <!-- alles in Mudlyout geht -->
         <MudMainContent>
             @if (FieldList is not null) {
                 @for (int i = 0; i < FieldList.GetMaxX(); i++) {
@@ -34,6 +34,9 @@
             }
         </MudMainContent>
     </MudLayout>
+    @foreach (var i in sg.MapEntities) {
+        <p>@i.EntityId</p>
+    }
 </div>
 
 
@@ -41,19 +44,21 @@
 
 @code {
     [Parameter]
-    public int SavedGameId { get; set; }
+    public int SavedGameId { get; set; } // geht
 
-    public FieldList FieldList { get; set; }
+    public FieldList FieldList { get; set; } // geht
+    public List<SavedGame> entity { get; set; }
 
-    public SavedGame sg { get; set; }
+    public SavedGame sg { get; set; } // geht
 
     protected async override Task OnInitializedAsync()
     {
-        sg = await _sgRepository.ReadGraphAsync(SavedGameId); // geht ned
-        var map = await _mapRepository.ReadGraphAsync(sg.MapId);
+        sg = await _sgRepository.ReadAsync(SavedGameId); // geht
+        var map = await _mapRepository.ReadGraphAsync(sg.MapId); // geht
+        entity = await _sgRepository.ReadGraphAsync(s => s.SavedGameId == SavedGameId);
 
         if (map is not null) {
-            FieldList = new FieldList(map.Fields);
+            FieldList = new FieldList(map.Fields); // geht
         }
     }
 }
