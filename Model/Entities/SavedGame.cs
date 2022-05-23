@@ -25,4 +25,6 @@ public class SavedGame {
     [Column("HP")]
     [Required]
     public int HP { get; set; }
+    
+    public List<MapEntity> MapEntities { get; set; } = new();
 }
