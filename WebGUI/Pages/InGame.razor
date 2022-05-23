@@ -47,9 +47,9 @@
     public SavedGame sg { get; set; } 
 
     protected override async Task OnParametersSetAsync() {
-        var data = await _sgRepository.ReadGraphAsync(SavedGameId); // geht
+        sg = await _sgRepository.ReadGraphAsync(SavedGameId); // geht
 
-        var map = await _mapRepository.ReadGraphAsync(data.MapId); // geht
+        var map = await _mapRepository.ReadGraphAsync(sg.MapId); // geht
         
         if (map is not null) {
             FieldList = new FieldList(map.Fields); // geht
