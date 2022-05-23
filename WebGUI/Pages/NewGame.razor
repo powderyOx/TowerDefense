@@ -11,23 +11,34 @@
     <DataAnnotationsValidator/>
     <InputText id="strength-input" class="form-text" @bind-Value="@Game.Name"/>
     <ValidationMessage For="() => Game.Name"></ValidationMessage>
+    <p class="text-danger">@message</p>
     <button type="submit" class="btn">Submit</button>
 </EditForm>
 
 @code {
-
-    // weiterleitung zum game (noch nicht implementieren)
-
-
     public SavedGame Game { get; set; } = new();
+    public List<SavedGame> GameList { get; set; }
+    
+    public string message { get; set; } = "";
+
 
     public async Task CreateGame() {
         Game.Money = 200;
         Game.Round = 1;
         Game.HP = 100;
-        await _gameRepository.CreateAsync(Game);
-        
-        _logger.LogInformation("Game created!");
-        _navManager.NavigateTo("/");
+        Game.MapId = 1;
+
+        GameList = await _gameRepository.ReadAllAsync();
+
+        if (GameList.Exists(g => g.Name == Game.Name)) {
+            message = "Name already exists";
+        }
+        else {
+            await _gameRepository.CreateAsync(Game);
+            _logger.LogInformation("Game created!");
+            _navManager.NavigateTo($"/map/{Game.SavedGameId}");
+        }
     }
+
+    
 }

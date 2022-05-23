@@ -11,7 +11,7 @@ public class TowerDbContext : DbContext {
     
     public DbSet<Attacker> Attackers { get; set; }
     public DbSet<Defender> Defenders { get; set; }
-    public DbSet<Entity> Entities { get; set; }
+    public DbSet<AEntity> Entities { get; set; }
     public DbSet<GameMap> Maps { get; set; }
     public DbSet<MapEntity> MapEntities { get; set; }
     public DbSet<SavedGame> SavedGames { get; set; }
@@ -30,12 +30,13 @@ public class TowerDbContext : DbContext {
     public TowerDbContext(DbContextOptions<TowerDbContext> dbContextOptions) : base(dbContextOptions) { }
 
     protected override void OnModelCreating(ModelBuilder builder) {
+        
         builder.Entity<Attacker>()
             .HasIndex(a => a.Name)
             .IsUnique();
+        
         builder.Entity<MapEntity>().HasKey(m => new {
             m.EntityId,
-            m.MapId,
             m.SavedGameId
         });
         
@@ -60,8 +61,7 @@ public class TowerDbContext : DbContext {
             .HasValue<UpLeftTurn>("UP_LEFT_TURN")
             .HasValue<UpRightTurn>("UP_RIGHT_TURN")
             .HasValue<VerticalStraight>("VERTICAL_STRAIGHT");
-        
-        
+
         builder.Entity<MapEntity>()
             .HasOne(s => s.SavedGame)
             .WithMany(m => m.MapEntities)

@@ -4,10 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Model.Entities; 
 
 [Table("DEFENDERS")]
-public class Defender : Entity {
-    [Column("DEFENDER_ID")]
-    public int DefenderId { get; set; }
-
+public class Defender : AEntity {
     [Column("FIRE_RATE")]
     [Required]
     public int FireRate { get; set; }

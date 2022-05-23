@@ -9,6 +9,11 @@ public class SavedGame {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column("SAVED_GAME_ID")] 
     public int SavedGameId { get; set; }
+    
+    [Column("MAP_ID")]
+    public int MapId { get; set; }
+    
+    public GameMap Map { get; set; }
 
     [Column("MONEY")]
     [Required]

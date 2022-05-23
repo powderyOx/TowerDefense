@@ -6,12 +6,16 @@
 <h3>SavedGames</h3>
 
 @if (@GameList is not null) {
-    <ul>
+    @if (@GameList.Count > 0) {
+        <ul>
         @foreach (var games in GameList) {
-            <li><a href="">@games.Name</a></li>
-            <li>@games.MapEntities</li>
+            <li><a href="map/@games.SavedGameId">@games.Name</a></li>
         }
-    </ul>
+        </ul>
+    }
+    else {
+        <p>No Games found!</p>
+    }
 }
 else {
     <span>loading...</span>

@@ -3,10 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model.Entities; 
 [Table(("ATTACKERS"))]
-public class Attacker : Entity {
-    [Column("ATTACKER_ID")]
-    public int AttackerId { get; set; }
-    
+public class Attacker : AEntity {
     [Column("SPEED")]
     [Required]
     public int Speed { get; set; }
