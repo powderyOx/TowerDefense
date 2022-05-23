@@ -12,21 +12,23 @@
 <MudSnackbarProvider/>
 
 <div style="text-align: center ">
-    <div class="m-auto">
-        <ul class="list-group list-group-horizontal">
-            <li class="list-group-item">@sg.Name</li>
-            <li class="list-group-item">@sg.Round</li>
-            <li class="list-group-item">@sg.HP</li>
-            <li class="list-group-item">@sg.Money</li>
-        </ul>
-    </div>
+    @if (sg is not null) {
+        <div class="m-auto">
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">@sg.Name</li>
+                <li class="list-group-item">@sg.Round</li>
+                <li class="list-group-item">@sg.HP</li>
+                <li class="list-group-item">@sg.Money</li>
+            </ul>
+        </div>
+    }
     <MudLayout> <!-- alles in Mudlyout geht -->
         <MudMainContent>
             @if (FieldList is not null) {
                 @for (int i = 0; i < FieldList.GetMaxX(); i++) {
                     @for (int j = 0; j < FieldList.GetMinY(); j++) {
                         @if (FieldList.Contains(i, j)) {
-                            <img src="@FieldList.GetField(i,j).GetFieldType()" alt="image"/>
+                            <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image"/>
                         }
                     }
                     <br/>
@@ -34,15 +36,7 @@
             }
         </MudMainContent>
     </MudLayout>
-    @if(sg is not null)
-    {
-        @sg.Name
-    }
-
 </div>
-
-
-
 
 @code {
     [Parameter]
@@ -51,21 +45,11 @@
     public FieldList FieldList { get; set; } // geht
 
     public SavedGame sg { get; set; } 
-    public string Message { get; set; } = "Loading data ...";
 
-    protected async override Task OnInitializedAsync()
-    {
-        //sg = await _sgRepository.ReadAsync(SavedGameId); // geht
-        var data = await _sgRepository.ReadGraphAsync(s => s.SavedGameId == SavedGameId);
-        
-        if (data.Count == 0) {
-            Message = "no data";
-        } else
-        {
-            sg = data[0];
-        }
-        
-        var map = await _mapRepository.ReadGraphAsync(sg.MapId); // geht
+    protected override async Task OnParametersSetAsync() {
+        var data = await _sgRepository.ReadGraphAsync(SavedGameId); // geht
+
+        var map = await _mapRepository.ReadGraphAsync(data.MapId); // geht
         
         if (map is not null) {
             FieldList = new FieldList(map.Fields); // geht
