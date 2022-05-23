@@ -9,10 +9,10 @@ namespace Domain.Repositories.Implementations;
 public class SavedGameRepository : ARepository<SavedGame>, ISavedGameRepository
 {
     public SavedGameRepository(TowerDbContext dbContext) : base(dbContext) { }
-    public async Task<List<SavedGame>> ReadGraphAsync(Expression<Func<SavedGame, bool>> filter)
+
+    public async Task<SavedGame> ReadGraphAsync(int id)
         => await _table
             .Include(m => m.MapEntities) // List aus JT
-            .ThenInclude(m => m.Entity) //Object / Typ der Liste
-            .Where(filter)
-            .ToListAsync();
+            .ThenInclude(m=>m.AEntity)
+            .SingleOrDefaultAsync(s => s.SavedGameId == id);
 }
