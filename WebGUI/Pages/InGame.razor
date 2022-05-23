@@ -49,27 +49,26 @@
     public int SavedGameId { get; set; } // geht
 
     public FieldList FieldList { get; set; } // geht
-    public List<SavedGame> entity { get; set; }
 
-    public SavedGame sg { get; set; } // geht
+    public SavedGame sg { get; set; } 
     public string Message { get; set; } = "Loading data ...";
 
     protected async override Task OnInitializedAsync()
     {
-        sg = await _sgRepository.ReadAsync(SavedGameId); // geht
-        var map = await _mapRepository.ReadGraphAsync(sg.MapId); // geht
+        //sg = await _sgRepository.ReadAsync(SavedGameId); // geht
         var data = await _sgRepository.ReadGraphAsync(s => s.SavedGameId == SavedGameId);
-
-        if (map is not null) {
-            FieldList = new FieldList(map.Fields); // geht
-        }
         
         if (data.Count == 0) {
             Message = "no data";
-        }
-        else
+        } else
         {
             sg = data[0];
+        }
+        
+        var map = await _mapRepository.ReadGraphAsync(sg.MapId); // geht
+        
+        if (map is not null) {
+            FieldList = new FieldList(map.Fields); // geht
         }
     }
 }

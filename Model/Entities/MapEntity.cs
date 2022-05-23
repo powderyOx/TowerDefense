@@ -4,8 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Model.Entities; 
 [Table("MAP_HAS_ENTITIES")]
 public class MapEntity {
-
-    
+  
     [Column("ENTITY_ID")]
     public int EntityId { get; set; }
 
