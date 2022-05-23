@@ -34,9 +34,11 @@
             }
         </MudMainContent>
     </MudLayout>
-    @foreach (var i in sg.MapEntities) {
-        <p>@i.EntityId</p>
+    @if(sg is not null)
+    {
+        @sg.Name
     }
+
 </div>
 
 
@@ -50,15 +52,24 @@
     public List<SavedGame> entity { get; set; }
 
     public SavedGame sg { get; set; } // geht
+    public string Message { get; set; } = "Loading data ...";
 
     protected async override Task OnInitializedAsync()
     {
         sg = await _sgRepository.ReadAsync(SavedGameId); // geht
         var map = await _mapRepository.ReadGraphAsync(sg.MapId); // geht
-        entity = await _sgRepository.ReadGraphAsync(s => s.SavedGameId == SavedGameId);
+        var data = await _sgRepository.ReadGraphAsync(s => s.SavedGameId == SavedGameId);
 
         if (map is not null) {
             FieldList = new FieldList(map.Fields); // geht
+        }
+        
+        if (data.Count == 0) {
+            Message = "no data";
+        }
+        else
+        {
+            sg = data[0];
         }
     }
 }
