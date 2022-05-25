@@ -68,8 +68,8 @@ INSERT INTO towerdefense.fields_st (X, Y, MAP_ID, FIELD_TYPE) VALUES (6, 3, 1, '
 INSERT INTO towerdefense.fields_st (X, Y, MAP_ID, FIELD_TYPE) VALUES (6, 4, 1, 'EMPTY_FIELD');
 INSERT INTO towerdefense.fields_st (X, Y, MAP_ID, FIELD_TYPE) VALUES (6, 5, 1, 'DOWN_LEFT_TURN');
 INSERT INTO towerdefense.fields_st (X, Y, MAP_ID, FIELD_TYPE) VALUES (6, 6, 1, 'HORIZONTAL_STRAIGHT');
-INSERT INTO towerdefense.fields_st (X, Y, MAP_ID, FIELD_TYPE) VALUES (6, 7, 1, 'EMPTY_FIELD');
-INSERT INTO towerdefense.fields_st (X, Y, MAP_ID, FIELD_TYPE) VALUES (6, 8, 1, 'EMPTY_FIELD');
+INSERT INTO towerdefense.fields_st (X, Y, MAP_ID, FIELD_TYPE) VALUES (6, 7, 1, 'HORIZONTAL_STRAIGHT');
+INSERT INTO towerdefense.fields_st (X, Y, MAP_ID, FIELD_TYPE) VALUES (6, 8, 1, 'HORIZONTAL_STRAIGHT');
 INSERT INTO towerdefense.fields_st (X, Y, MAP_ID, FIELD_TYPE) VALUES (6, 9, 1, 'EMPTY_FIELD');
 INSERT INTO towerdefense.fields_st (X, Y, MAP_ID, FIELD_TYPE) VALUES (7, 0, 1, 'EMPTY_FIELD');
 INSERT INTO towerdefense.fields_st (X, Y, MAP_ID, FIELD_TYPE) VALUES (7, 1, 1, 'EMPTY_FIELD');

@@ -29,7 +29,12 @@
                     @for (int i = 0; i < FieldList.GetMaxX(); i++) {
                         @for (int j = 0; j < FieldList.GetMinY(); j++) {
                             @if (FieldList.Contains(i, j)) {
-                                <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image"/>
+                                <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image" class="floor"/>
+                            }
+                            @foreach (var me in sg.MapEntities) {
+                                @if ((me.X == i) && (me.Y == j) ) {
+                                    <img src="image/empty.png" alt="defender" class="defender"/>
+                                }
                             }
                         }
                         <br/>
@@ -37,17 +42,7 @@
                 }
             </MudMainContent>
         </MudLayout>
-
-
-        @foreach (var i in sg.MapEntities) {
-            @if (i.X is not null) {
-                <p>@i.X</p>
-                <p>@i.Y</p>
-                <br/>
-            }
-        }
     }
-
 </div>
 
 @code {
