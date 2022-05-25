@@ -36,6 +36,19 @@
             }
         </MudMainContent>
     </MudLayout>
+    
+    @sg.MapEntities
+    
+    @if (EntityList is not null) {
+        @foreach (var i in EntityList) {
+            @if (i.X is not null) {
+                <p>@i.X</p>
+                <p>@i.Y</p>
+                <br/>
+            }
+        }
+    }
+    
 </div>
 
 @code {
@@ -45,12 +58,14 @@
     public FieldList FieldList { get; set; } // geht
 
     public SavedGame sg { get; set; } 
+    public List<MapEntity> EntityList { get; set; } 
 
     protected override async Task OnParametersSetAsync() {
-        var data = await _sgRepository.ReadGraphAsync(SavedGameId); // geht
+        sg = await _sgRepository.ReadGraphAsync(SavedGameId); // geht
+        EntityList = new List<MapEntity>(sg.MapEntities);
 
-        var map = await _mapRepository.ReadGraphAsync(data.MapId); // geht
-        
+        var map = await _mapRepository.ReadGraphAsync(sg.MapId); // geht
+
         if (map is not null) {
             FieldList = new FieldList(map.Fields); // geht
         }
