@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0kUZzXLVBnC859GS6fKVMFNXq8VSqhP8FRMqoSj1yjY=",
+  "Hash": "1qGgYQAQASUbyWD0bYUVM0QntoFNQbwT0AkZV/ziQOs=",
   "Source": "WebGUI",
   "BasePath": "_content/WebGUI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "WebGUI\\wwwroot",
       "Source": "WebGUI",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\WebGUI.styles.css",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\WebGUI.styles.css",
       "SourceId": "WebGUI",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "WebGUI.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\WebGUI.styles.css"
+      "OriginalItemSpec": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\WebGUI.styles.css"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WebGUI.bundle.scp.css",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WebGUI.bundle.scp.css",
       "SourceId": "WebGUI",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "WebGUI.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WebGUI.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WebGUI.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\css\\site.css",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\favicon.ico",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\empty.png",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\empty.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "image/empty.png",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\image\\empty.png"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\f_down_left_turn.png",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\f_down_left_turn.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "image/f_down_left_turn.png",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\image\\f_down_left_turn.png"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\f_down_right_turn.png",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\f_down_right_turn.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "image/f_down_right_turn.png",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\image\\f_down_right_turn.png"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\f_straight_side.png",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\f_straight_side.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "image/f_straight_side.png",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\image\\f_straight_side.png"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\f_straight_up.png",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\f_straight_up.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "image/f_straight_up.png",
       "AssetKind": "All",
@@ -357,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\image\\f_straight_up.png"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\f_up_left_turn.png",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\f_up_left_turn.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "image/f_up_left_turn.png",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\image\\f_up_left_turn.png"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\f_up_right_turn.png",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\f_up_right_turn.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "image/f_up_right_turn.png",
       "AssetKind": "All",
@@ -391,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\image\\f_up_right_turn.png"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\grass.png",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\image\\grass.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "image/grass.png",
       "AssetKind": "All",
@@ -408,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\image\\grass.png"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\f_down_right_turn.psd",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\f_down_right_turn.psd",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "psd/f_down_right_turn.psd",
       "AssetKind": "All",
@@ -425,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\psd\\f_down_right_turn.psd"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\f_straight_side.psd",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\f_straight_side.psd",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "psd/f_straight_side.psd",
       "AssetKind": "All",
@@ -442,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\psd\\f_straight_side.psd"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\horizontal_straight.png",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\horizontal_straight.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "psd/horizontal_straight.png",
       "AssetKind": "All",
@@ -459,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\psd\\horizontal_straight.png"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\left_down.png",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\left_down.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "psd/left_down.png",
       "AssetKind": "All",
@@ -476,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\psd\\left_down.png"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\left_up.png",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\left_up.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "psd/left_up.png",
       "AssetKind": "All",
@@ -493,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\psd\\left_up.png"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\map_assets.psd",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\map_assets.psd",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "psd/map_assets.psd",
       "AssetKind": "All",
@@ -510,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\psd\\map_assets.psd"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\right_down.png",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\right_down.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "psd/right_down.png",
       "AssetKind": "All",
@@ -527,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\psd\\right_down.png"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\right_up.png",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\right_up.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "psd/right_up.png",
       "AssetKind": "All",
@@ -544,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\psd\\right_up.png"
     },
     {
-      "Identity": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\v_streight.png",
+      "Identity": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\psd\\v_streight.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\flori\\source\\repos\\TowerDefense\\WebGUI\\wwwroot\\",
       "BasePath": "_content/WebGUI",
       "RelativePath": "psd/v_streight.png",
       "AssetKind": "All",
