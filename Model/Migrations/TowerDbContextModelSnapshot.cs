@@ -108,7 +108,7 @@ namespace Model.Migrations
 
                     b.HasIndex("SavedGameId");
 
-                    b.ToTable("MAP_HAS_ENTITIES");
+                    b.ToTable("MAP_HAS_ENTITIES_JT");
                 });
 
             modelBuilder.Entity("Model.Entities.Round", b =>

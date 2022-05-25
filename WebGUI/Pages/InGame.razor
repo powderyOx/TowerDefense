@@ -21,26 +21,25 @@
                 <li class="list-group-item">@sg.Money</li>
             </ul>
         </div>
-    }
-    <MudLayout> <!-- alles in Mudlyout geht -->
-        <MudMainContent>
-            @if (FieldList is not null) {
-                @for (int i = 0; i < FieldList.GetMaxX(); i++) {
-                    @for (int j = 0; j < FieldList.GetMinY(); j++) {
-                        @if (FieldList.Contains(i, j)) {
-                            <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image"/>
+
+        <MudLayout>
+            <!-- alles in Mudlyout geht -->
+            <MudMainContent>
+                @if (FieldList is not null) {
+                    @for (int i = 0; i < FieldList.GetMaxX(); i++) {
+                        @for (int j = 0; j < FieldList.GetMinY(); j++) {
+                            @if (FieldList.Contains(i, j)) {
+                                <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image"/>
+                            }
                         }
+                        <br/>
                     }
-                    <br/>
                 }
-            }
-        </MudMainContent>
-    </MudLayout>
-    
-    @sg.MapEntities
-    
-    @if (EntityList is not null) {
-        @foreach (var i in EntityList) {
+            </MudMainContent>
+        </MudLayout>
+
+
+        @foreach (var i in sg.MapEntities) {
             @if (i.X is not null) {
                 <p>@i.X</p>
                 <p>@i.Y</p>
@@ -48,21 +47,20 @@
             }
         }
     }
-    
+
 </div>
 
 @code {
+
     [Parameter]
     public int SavedGameId { get; set; } // geht
 
     public FieldList FieldList { get; set; } // geht
 
-    public SavedGame sg { get; set; } 
-    public List<MapEntity> EntityList { get; set; } 
+    public SavedGame sg { get; set; }
 
     protected override async Task OnParametersSetAsync() {
         sg = await _sgRepository.ReadGraphAsync(SavedGameId); // geht
-        EntityList = new List<MapEntity>(sg.MapEntities);
 
         var map = await _mapRepository.ReadGraphAsync(sg.MapId); // geht
 
@@ -70,4 +68,5 @@
             FieldList = new FieldList(map.Fields); // geht
         }
     }
+
 }

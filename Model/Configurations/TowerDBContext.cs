@@ -39,7 +39,16 @@ public class TowerDbContext : DbContext {
             m.EntityId,
             m.SavedGameId
         });
-        
+        builder.Entity<MapEntity>()
+            .HasOne(mp => mp.SavedGame)
+            .WithMany(s => s.MapEntities)
+            .HasForeignKey(mp => mp.SavedGameId);
+
+        builder.Entity<MapEntity>()
+            .HasOne(mp => mp.AEntity)
+            .WithMany(ae => ae.MapEntities)
+            .HasForeignKey(mp => mp.EntityId);
+
         builder.Entity<SavedGame>()
             .HasIndex(a => a.Name)
             .IsUnique();
@@ -62,9 +71,6 @@ public class TowerDbContext : DbContext {
             .HasValue<UpRightTurn>("UP_RIGHT_TURN")
             .HasValue<VerticalStraight>("VERTICAL_STRAIGHT");
 
-        builder.Entity<MapEntity>()
-            .HasOne(s => s.SavedGame)
-            .WithMany(m => m.MapEntities)
-            .HasForeignKey(s => s.SavedGameId);
+        
     }
 }

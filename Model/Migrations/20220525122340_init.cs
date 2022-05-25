@@ -155,7 +155,7 @@ namespace Model.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "MAP_HAS_ENTITIES",
+                name: "MAP_HAS_ENTITIES_JT",
                 columns: table => new
                 {
                     ENTITY_ID = table.Column<int>(type: "int", nullable: false),
@@ -165,15 +165,15 @@ namespace Model.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MAP_HAS_ENTITIES", x => new { x.ENTITY_ID, x.SAVED_GAME_ID });
+                    table.PrimaryKey("PK_MAP_HAS_ENTITIES_JT", x => new { x.ENTITY_ID, x.SAVED_GAME_ID });
                     table.ForeignKey(
-                        name: "FK_MAP_HAS_ENTITIES_ENTITIES_BT_ENTITY_ID",
+                        name: "FK_MAP_HAS_ENTITIES_JT_ENTITIES_BT_ENTITY_ID",
                         column: x => x.ENTITY_ID,
                         principalTable: "ENTITIES_BT",
                         principalColumn: "ENTITY_ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_MAP_HAS_ENTITIES_SAVED_GAMES_SAVED_GAME_ID",
+                        name: "FK_MAP_HAS_ENTITIES_JT_SAVED_GAMES_SAVED_GAME_ID",
                         column: x => x.SAVED_GAME_ID,
                         principalTable: "SAVED_GAMES",
                         principalColumn: "SAVED_GAME_ID",
@@ -192,8 +192,8 @@ namespace Model.Migrations
                 column: "MAP_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MAP_HAS_ENTITIES_SAVED_GAME_ID",
-                table: "MAP_HAS_ENTITIES",
+                name: "IX_MAP_HAS_ENTITIES_JT_SAVED_GAME_ID",
+                table: "MAP_HAS_ENTITIES_JT",
                 column: "SAVED_GAME_ID");
 
             migrationBuilder.CreateIndex(
@@ -220,7 +220,7 @@ namespace Model.Migrations
                 name: "FIELDS_ST");
 
             migrationBuilder.DropTable(
-                name: "MAP_HAS_ENTITIES");
+                name: "MAP_HAS_ENTITIES_JT");
 
             migrationBuilder.DropTable(
                 name: "ROUNDS");
