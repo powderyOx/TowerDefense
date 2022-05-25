@@ -11,7 +11,7 @@ using Model.Configurations;
 namespace Model.Migrations
 {
     [DbContext(typeof(TowerDbContext))]
-    [Migration("20220524091545_init")]
+    [Migration("20220525122340_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -110,7 +110,7 @@ namespace Model.Migrations
 
                     b.HasIndex("SavedGameId");
 
-                    b.ToTable("MAP_HAS_ENTITIES");
+                    b.ToTable("MAP_HAS_ENTITIES_JT");
                 });
 
             modelBuilder.Entity("Model.Entities.Round", b =>
