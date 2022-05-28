@@ -20,4 +20,5 @@ public class Defender : AEntity {
     [Column("ROUND")]
     [Required]
     public int Round { get; set; }
+    
 }

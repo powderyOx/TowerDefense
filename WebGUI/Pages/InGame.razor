@@ -31,9 +31,9 @@
                             @if (FieldList.Contains(i, j)) {
                                 <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image" class="floor"/>
                             }
-                            @foreach (var me in sg.MapEntities) {
+                            @foreach (var me in MapEntityList) {
                                 @if ((me.X == i) && (me.Y == j) ) {
-                                    <img src="image/empty.png" alt="defender" class="defender"/>
+                                    <img src="@MapEntityList.GetEntityType(i,j).GetEntityType()" alt="defender" class="defender"/>
                                 }
                             }
                         }
@@ -52,6 +52,8 @@
 
     public FieldList FieldList { get; set; } // geht
 
+    public MapEntityList MapEntityList { get; set; }
+
     public SavedGame sg { get; set; }
 
     protected override async Task OnParametersSetAsync() {
@@ -61,6 +63,10 @@
 
         if (map is not null) {
             FieldList = new FieldList(map.Fields); // geht
+        }
+
+        if (sg is not null) {
+            MapEntityList = new MapEntityList(sg.MapEntities);
         }
     }
 

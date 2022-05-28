@@ -11,5 +11,4 @@ public class GameMap{
     public int MapId { get; set; }
     
     public List<AField> Fields { get; set; } = new();
-
 }

@@ -20,8 +20,6 @@ namespace Model.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     DAMAGE = table.Column<int>(type: "int", nullable: false),
                     ENTITY_TYPE = table.Column<string>(type: "varchar(45)", maxLength: 45, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    NAME = table.Column<string>(type: "varchar(45)", maxLength: 45, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -161,7 +159,9 @@ namespace Model.Migrations
                     ENTITY_ID = table.Column<int>(type: "int", nullable: false),
                     SAVED_GAME_ID = table.Column<int>(type: "int", nullable: false),
                     X = table.Column<int>(type: "int", nullable: true),
-                    Y = table.Column<int>(type: "int", nullable: true)
+                    Y = table.Column<int>(type: "int", nullable: true),
+                    ENTITY_TYPE = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {

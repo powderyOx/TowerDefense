@@ -17,10 +17,6 @@ public abstract class AEntity {
     [Required, StringLength(45)]
     public string EntityType { get; set; }
 
-    [Column("NAME")]
-    [Required, StringLength(45)]
-    public string Name { get; set; }
-    
-    
     public List<MapEntity> MapEntities { get; set; }
+    
 }
