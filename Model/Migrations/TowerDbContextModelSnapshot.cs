@@ -36,12 +36,6 @@ namespace Model.Migrations
                         .HasColumnType("varchar(45)")
                         .HasColumnName("ENTITY_TYPE");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(45)
-                        .HasColumnType("varchar(45)")
-                        .HasColumnName("NAME");
-
                     b.HasKey("EntityId");
 
                     b.ToTable("ENTITIES_BT");
@@ -96,6 +90,10 @@ namespace Model.Migrations
                         .HasColumnType("int")
                         .HasColumnName("SAVED_GAME_ID");
 
+                    b.Property<string>("ENTITY_TYPE")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<int?>("X")
                         .HasColumnType("int")
                         .HasColumnName("X");
@@ -109,6 +107,8 @@ namespace Model.Migrations
                     b.HasIndex("SavedGameId");
 
                     b.ToTable("MAP_HAS_ENTITIES_JT");
+
+                    b.HasDiscriminator<string>("ENTITY_TYPE").HasValue("MapEntity");
                 });
 
             modelBuilder.Entity("Model.Entities.Round", b =>
@@ -186,9 +186,6 @@ namespace Model.Migrations
                         .HasColumnType("int")
                         .HasColumnName("SPEED");
 
-                    b.HasIndex("Name")
-                        .IsUnique();
-
                     b.HasIndex("RoundId");
 
                     b.ToTable("ATTACKERS");
@@ -215,6 +212,33 @@ namespace Model.Migrations
                         .HasColumnName("ROUND");
 
                     b.ToTable("DEFENDERS");
+                });
+
+            modelBuilder.Entity("Model.Entities.EntityTypes.Archer", b =>
+                {
+                    b.HasBaseType("Model.Entities.MapEntity");
+
+                    b.ToTable("MAP_HAS_ENTITIES_JT");
+
+                    b.HasDiscriminator().HasValue("ARCHER");
+                });
+
+            modelBuilder.Entity("Model.Entities.EntityTypes.LongbowArcher", b =>
+                {
+                    b.HasBaseType("Model.Entities.MapEntity");
+
+                    b.ToTable("MAP_HAS_ENTITIES_JT");
+
+                    b.HasDiscriminator().HasValue("LONGBOW_ARCHER");
+                });
+
+            modelBuilder.Entity("Model.Entities.EntityTypes.Oni", b =>
+                {
+                    b.HasBaseType("Model.Entities.MapEntity");
+
+                    b.ToTable("MAP_HAS_ENTITIES_JT");
+
+                    b.HasDiscriminator().HasValue("ONI");
                 });
 
             modelBuilder.Entity("Model.Entities.Map.FieldTypes.DownLeftTurn", b =>
@@ -294,7 +318,7 @@ namespace Model.Migrations
             modelBuilder.Entity("Model.Entities.MapEntity", b =>
                 {
                     b.HasOne("Model.Entities.AEntity", "AEntity")
-                        .WithMany()
+                        .WithMany("MapEntities")
                         .HasForeignKey("EntityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -345,6 +369,11 @@ namespace Model.Migrations
                         .HasForeignKey("Model.Entities.Defender", "EntityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Model.Entities.AEntity", b =>
+                {
+                    b.Navigation("MapEntities");
                 });
 
             modelBuilder.Entity("Model.Entities.GameMap", b =>
