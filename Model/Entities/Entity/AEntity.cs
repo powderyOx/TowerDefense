@@ -18,5 +18,4 @@ public abstract class AEntity {
     public string EntityType { get; set; }
 
     public List<MapEntity> MapEntities { get; set; }
-    
 }

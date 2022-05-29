@@ -55,11 +55,15 @@ public class TowerDbContext : DbContext {
             .WithMany(e => e.MapEntities)
             .HasForeignKey(me => me.EntityId);
 
-        builder.Entity<MapEntity>()
+        builder.Entity<Defender>()
             .HasDiscriminator<string>("ENTITY_TYPE")
             .HasValue<Archer>("ARCHER")
-            .HasValue<LongbowArcher>("LONGBOW_ARCHER")
+            .HasValue<LongbowArcher>("LONGBOW_ARCHER");
+
+        builder.Entity<Attacker>()
+            .HasDiscriminator<string>("ENTITY_TYPE")
             .HasValue<Oni>("ONI");
+
 
         builder.Entity<SavedGame>()
             .HasIndex(a => a.Name)

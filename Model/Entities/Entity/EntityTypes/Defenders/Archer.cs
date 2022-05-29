@@ -1,6 +1,5 @@
 ﻿namespace Model.Entities.EntityTypes; 
 
-public class Archer : MapEntity {
-    public override string GetEntityType()
-        => "./image/defenders/archer.png";
+public class Archer : Defender {
+    //public override string GetDefenderType() => "./image/defenders/archer.png";
 }

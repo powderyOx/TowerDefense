@@ -33,7 +33,8 @@
                             }
                             @foreach (var me in MapEntityList) {
                                 @if ((me.X == i) && (me.Y == j) ) {
-                                    <img src="@MapEntityList.GetEntityType(i,j).GetEntityType()" alt="defender" class="defender"/>
+                                    //<img src="@MapEntityList.GetEntityType(i,j).GetEntityType()" alt="defender" class="defender"/>
+                                    //@me.AEntity.EntityType
                                 }
                             }
                         }
