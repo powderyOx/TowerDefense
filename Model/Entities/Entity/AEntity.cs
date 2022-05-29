@@ -16,6 +16,7 @@ public abstract class AEntity {
     [Column("ENTITY_TYPE")]
     [Required, StringLength(45)]
     public string EntityType { get; set; }
-
+    
     public List<MapEntity> MapEntities { get; set; }
+    public abstract string GetEntityType();
 }

@@ -14,4 +14,8 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Entities\Entity\EntityTypes\Defenders\LongbowArcher.cs" />
+  </ItemGroup>
+
 </Project>

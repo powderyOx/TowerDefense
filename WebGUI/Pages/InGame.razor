@@ -11,7 +11,7 @@
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 
-<div style="text-align: center ">
+<div style="text-align: center">
     @if (sg is not null) {
         <div class="m-auto">
             <ul class="list-group list-group-horizontal">
@@ -28,13 +28,14 @@
                 @if (FieldList is not null) {
                     @for (int i = 0; i < FieldList.GetMaxX(); i++) {
                         @for (int j = 0; j < FieldList.GetMinY(); j++) {
+                            // Map
                             @if (FieldList.Contains(i, j)) {
                                 <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image" class="floor"/>
                             }
+                            // Defender
                             @foreach (var me in MapEntityList) {
-                                @if ((me.X == i) && (me.Y == j) ) {
-                                    //<img src="@MapEntityList.GetEntityType(i,j).GetEntityType()" alt="defender" class="defender"/>
-                                    //@me.AEntity.EntityType
+                                if ((me.X == i) && (me.Y == j)) {
+                                    <img src="@me.AEntity.GetEntityType()" alt="@me.AEntity.GetType().Name.ToLower()" class="defender"/>
                                 }
                             }
                         }
@@ -54,13 +55,14 @@
     public FieldList FieldList { get; set; } // geht
 
     public MapEntityList MapEntityList { get; set; }
-
+    
     public SavedGame sg { get; set; }
 
     protected override async Task OnParametersSetAsync() {
         sg = await _sgRepository.ReadGraphAsync(SavedGameId); // geht
 
         var map = await _mapRepository.ReadGraphAsync(sg.MapId); // geht
+        var path = map.GetPath();
 
         if (map is not null) {
             FieldList = new FieldList(map.Fields); // geht
@@ -70,5 +72,4 @@
             MapEntityList = new MapEntityList(sg.MapEntities);
         }
     }
-
 }

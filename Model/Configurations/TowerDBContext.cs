@@ -1,7 +1,6 @@
 ﻿using System.Collections.Immutable;
 using Microsoft.EntityFrameworkCore;
 using Model.Entities;
-using Model.Entities.EntityTypes;
 using Model.Entities.Map;
 using Model.Entities.Map.FieldTypes;
 
@@ -18,7 +17,7 @@ public class TowerDbContext : DbContext {
     public DbSet<SavedGame> SavedGames { get; set; }
     public DbSet<Round> Rounds { get; set; }
     public DbSet<AField> Fields { get; set; }
-    
+
     //Fields
     public DbSet<DownLeftTurn> DownLeftTurns { get; set; }
     public DbSet<DownRightTurn> DownRightTurns { get; set; }
@@ -27,18 +26,14 @@ public class TowerDbContext : DbContext {
     public DbSet<UpLeftTurn> UpLeftTurns { get; set; }
     public DbSet<UpRightTurn> UpRightTurns { get; set; }
     public DbSet<VerticalStraight> VerticalStraights { get; set; }
-
-    //Defenders
-    public DbSet<Archer> Archers { get; set; }
-    public DbSet<LongbowArcher> LongbowArchers { get; set; }
-    
-    //Attackers
-    public DbSet<Oni> Onis { get; set; }
-
     
     public TowerDbContext(DbContextOptions<TowerDbContext> dbContextOptions) : base(dbContextOptions) { }
 
     protected override void OnModelCreating(ModelBuilder builder) {
+        
+        builder.Entity<AEntity>()
+            .Property(e => e.EntityType)
+            .HasConversion<string>();
 
         builder.Entity<MapEntity>().HasKey(me => new {
             me.EntityId,
@@ -54,16 +49,6 @@ public class TowerDbContext : DbContext {
             .HasOne(me => me.AEntity)
             .WithMany(e => e.MapEntities)
             .HasForeignKey(me => me.EntityId);
-
-        builder.Entity<Defender>()
-            .HasDiscriminator<string>("ENTITY_TYPE")
-            .HasValue<Archer>("ARCHER")
-            .HasValue<LongbowArcher>("LONGBOW_ARCHER");
-
-        builder.Entity<Attacker>()
-            .HasDiscriminator<string>("ENTITY_TYPE")
-            .HasValue<Oni>("ONI");
-
 
         builder.Entity<SavedGame>()
             .HasIndex(a => a.Name)
@@ -89,6 +74,6 @@ public class TowerDbContext : DbContext {
             .HasValue<UpRightTurn>("UP_RIGHT_TURN")
             .HasValue<VerticalStraight>("VERTICAL_STRAIGHT");
 
-        
+
     }
 }

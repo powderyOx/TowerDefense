@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model.Entities; 
 [Table("MAP_HAS_ENTITIES_JT")]
-public class  MapEntity {
+public class MapEntity {
   
     [Column("ENTITY_ID")]
     public int EntityId { get; set; }
@@ -20,6 +20,4 @@ public class  MapEntity {
     
     [Column("Y")]
     public int? Y { get; set; }
-    
-    //public abstract string GetEntityType();
 }
