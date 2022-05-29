@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BLigLk01zHb1WkRyihSECofSGwNi0rDw0rzgNeniFK+CNsRZ+ibKL2nt2B97sGBKdmtyXVHnO/cpZ8gNZFvMrw==",
+  "dgSpecHash": "qh10pWaHYOrGcoJI3Thbv4VU/YxuIxENuPTHTYZ4vRxW8uHLWLEiPYYa4ncEnBoKj10DJVSTAgsaDDIn1gB7Nw==",
   "success": true,
   "projectFilePath": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\WebGUI.csproj",
   "expectedPackageFiles": [
@@ -23,7 +23,8 @@
     "C:\\Users\\flori\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.1\\pomelo.entityframeworkcore.mysql.6.0.1.nupkg.sha512",
     "C:\\Users\\flori\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\flori\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-    "C:\\Users\\flori\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\flori\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\flori\\.nuget\\packages\\tasktimer\\1.0.0\\tasktimer.1.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,6 +1,7 @@
 @page "/map/{SavedGameId:int}"
 @using Model.Entities.Map
 @using Domain.Repositories.Interfaces
+@using IKriv.Threading.Tasks
 @using Model.Entities
 @inherits LayoutComponentBase
 @inject IMapRepository _mapRepository
@@ -29,14 +30,15 @@
                     @for (int i = 0; i < FieldList.GetMaxX(); i++) {
                         @for (int j = 0; j < FieldList.GetMinY(); j++) {
                             // Map
-                            @if (FieldList.Contains(i, j)) {
-                                <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image" class="floor"/>
-                            }
+                            
                             // Defender
-                            @foreach (var me in MapEntityList) {
-                                if ((me.X == i) && (me.Y == j)) {
-                                    <img src="@me.AEntity.GetEntityType()" alt="@me.AEntity.GetType().Name.ToLower()" class="defender"/>
+                            @if (MapEntityList.Exists(me => me.X == i && me.Y == j)) {
+                                foreach (var me in MapEntityList.Where(me => me.X == i && me.Y == j)) {
+                                    <img src="@me.AEntity.GetEntityType()" alt="@me.AEntity.GetType().Name.ToLower()" class="entity" style="@($"background-image: url('{FieldList.GetField(i, j).GetFieldType()}')")"/>
                                 }
+                            }
+                            else if (FieldList.Contains(i, j)) {
+                                <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image" class="floor"/>
                             }
                         }
                         <br/>
@@ -58,11 +60,13 @@
     
     public SavedGame sg { get; set; }
 
+    public List<AField> Path { get; set; }
+
     protected override async Task OnParametersSetAsync() {
         sg = await _sgRepository.ReadGraphAsync(SavedGameId); // geht
 
         var map = await _mapRepository.ReadGraphAsync(sg.MapId); // geht
-        var path = map.GetPath();
+        Path = map.GetPath();
 
         if (map is not null) {
             FieldList = new FieldList(map.Fields); // geht
@@ -70,6 +74,30 @@
 
         if (sg is not null) {
             MapEntityList = new MapEntityList(sg.MapEntities);
+        }
+
+        foreach (var attacker in MapEntityList.Where(me => me.AEntity is Attacker)) {
+            attacker.X = Path[0].X;
+            attacker.Y = Path[0].Y;
+        }
+        DoStuffOnTimer();
+    }
+
+    private void MoveAttackers() {
+        foreach (var a in MapEntityList.Where(entity => entity is Attacker)) {
+            var next = Path[Path.FindIndex(f => f.X == a.X && f.Y == a.Y) + 1];
+            a.X = next.X;
+            a.Y = next.Y;
+            StateHasChanged();
+        }
+    }
+    
+    async Task DoStuffOnTimer() {
+        using var timer = new TaskTimer(1000).Start();
+        foreach (var task in timer)
+        {
+            await task;
+            MoveAttackers();
         }
     }
 }

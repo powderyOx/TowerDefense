@@ -72,7 +72,6 @@ a, .btn-link {
     z-index: 1;
 }
 
-.defender {
-    position: absolute;
+.entity {
     z-index: 3;
 }

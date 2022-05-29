@@ -180,6 +180,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "TaskTimer": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [

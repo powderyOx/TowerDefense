@@ -265,6 +265,9 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "TaskTimer/1.0.0": {
+        "type": "package"
+      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -724,6 +727,18 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "TaskTimer/1.0.0": {
+      "sha512": "7h9p+jK9Xf2eZV4rin8QzvqjOR9/peWugYRj1fdrNGmwPdeKFV98GXKX2i03uSNUoZv3etBTgMycqkjq7zZpUA==",
+      "type": "package",
+      "path": "tasktimer/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/TaskTimer.cs",
+        "tasktimer.1.0.0.nupkg.sha512",
+        "tasktimer.nuspec"
+      ]
+    },
     "Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
@@ -740,7 +755,8 @@
       "Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.1",
       "Model >= 1.0.0",
-      "Pomelo.EntityFrameworkCore.MySql >= 6.0.1"
+      "Pomelo.EntityFrameworkCore.MySql >= 6.0.1",
+      "TaskTimer >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -796,6 +812,10 @@
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
             "version": "[6.0.1, )"
+          },
+          "TaskTimer": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           }
         },
         "imports": [

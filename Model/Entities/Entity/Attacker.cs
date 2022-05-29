@@ -26,6 +26,6 @@ public class Attacker : AEntity {
 
     public Round Round { get; set; }
     public override string GetEntityType() {
-        return "./image/attacker/" + EntityType + ".png";
+        return "./image/attackers/" + EntityType + ".png";
     }
 }

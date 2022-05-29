@@ -20,7 +20,8 @@ public class GameMap{
         var firstField = fieldList.SingleOrDefault(f => f.Y == 0 && f is not EmptyField);
         
         var currentField = firstField;
-
+        
+        // leida nd rekursiv
         while (fieldList.GetNextField(currentField, path.LastOrDefault()) != null) {
             var previousField = path.LastOrDefault();
             path.Add(currentField);
