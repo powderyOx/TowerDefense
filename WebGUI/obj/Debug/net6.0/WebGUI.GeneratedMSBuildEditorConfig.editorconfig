@@ -19,20 +19,8 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Pages/Homepage.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZXBhZ2UucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Pages/InGame.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5HYW1lLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Pages/NewGame.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3R2FtZS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Pages/SavedGameList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2F2ZWRHYW1lTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Shared/SurveyPrompt.razor]
@@ -42,6 +30,18 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Pages/Homepage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZXBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-e59vrvbsdi
+
+[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Pages/NewGame.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3R2FtZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-e69fkt9r7x
+
+[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Pages/SavedGameList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2F2ZWRHYW1lTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-odechfuidb
 
 [C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=

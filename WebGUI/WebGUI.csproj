@@ -19,6 +19,10 @@
     <Folder Include="wwwroot\image\defenders" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\fonts\go3v2.ttf" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>

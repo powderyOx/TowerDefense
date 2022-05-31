@@ -1,0 +1,23 @@
+﻿@font-face {
+    font-family: 'Gang of Three';
+    src: url('/fonts/go3v2.ttf') format('truetype');
+}
+
+h1 {
+    color: #262626;
+    font-family: 'Gang of Three', serif;
+}
+
+.japan {
+    color: #ECA8E1;
+    font-family: 'Gang of Three', serif;
+    font-size: 4.5rem;
+}
+
+img {
+    position: absolute;
+    max-width: 33vw;
+    transform: scale(-1, -1);
+    right: 0px;
+    top: 450px;
+}

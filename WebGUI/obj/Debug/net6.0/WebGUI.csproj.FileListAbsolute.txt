@@ -311,3 +311,6 @@ C:\Users\Nutzer\source\repos\TowerDefense\TowerDefense\WebGUI\obj\Debug\net6.0\W
 C:\Users\Nutzer\source\repos\TowerDefense\TowerDefense\WebGUI\obj\Debug\net6.0\ref\WebGUI.dll
 C:\Users\Nutzer\source\repos\TowerDefense\TowerDefense\WebGUI\obj\Debug\net6.0\WebGUI.pdb
 C:\Users\Nutzer\source\repos\TowerDefense\TowerDefense\WebGUI\obj\Debug\net6.0\WebGUI.genruntimeconfig.cache
+C:\Users\Nutzer\source\repos\TowerDefense\TowerDefense\WebGUI\obj\Debug\net6.0\scopedcss\Pages\Homepage.razor.rz.scp.css
+C:\Users\Nutzer\source\repos\TowerDefense\TowerDefense\WebGUI\obj\Debug\net6.0\scopedcss\Pages\SavedGameList.razor.rz.scp.css
+C:\Users\Nutzer\source\repos\TowerDefense\TowerDefense\WebGUI\obj\Debug\net6.0\scopedcss\Pages\NewGame.razor.rz.scp.css

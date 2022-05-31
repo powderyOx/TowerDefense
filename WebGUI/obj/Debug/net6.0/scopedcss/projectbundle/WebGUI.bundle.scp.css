@@ -1,3 +1,75 @@
+/* _content/WebGUI/Pages/Homepage.razor.rz.scp.css */
+@font-face {
+    font-family: 'Gang of Three';
+    src: url('/fonts/go3v2.ttf') format('truetype');
+}
+
+h1[b-e59vrvbsdi] {
+    color: #262626;
+    font-family: 'Gang of Three', serif;
+}
+
+.japan[b-e59vrvbsdi] {
+    color: #ECA8E1;
+    font-family: 'Gang of Three', serif;
+    font-size: 4.5rem;
+}
+
+img[b-e59vrvbsdi] {
+    position: absolute;
+    max-width: 33vw;
+    transform: scale(-1, -1);
+    right: 0px;
+    top: 450px;
+}
+/* _content/WebGUI/Pages/NewGame.razor.rz.scp.css */
+@font-face {
+    font-family: 'Gang of Three';
+    src: url('/fonts/go3v2.ttf') format('truetype');
+}
+
+h1[b-e69fkt9r7x] {
+    color: #262626;
+    font-family: 'Gang of Three', serif;
+}
+
+.japan[b-e69fkt9r7x] {
+    color: #ECA8E1;
+    font-family: 'Gang of Three', serif;
+    font-size: 4.5rem;
+}
+
+img[b-e69fkt9r7x] {
+    position: absolute;
+    max-width: 33vw;
+    transform: scale(-1, -1);
+    right: 0px;
+    top: 450px;
+}
+/* _content/WebGUI/Pages/SavedGameList.razor.rz.scp.css */
+@font-face {
+    font-family: 'Gang of Three';
+    src: url('/fonts/go3v2.ttf') format('truetype');
+}
+
+h1[b-odechfuidb] {
+    color: #262626;
+    font-family: 'Gang of Three', serif;
+}
+
+.japan[b-odechfuidb] {
+    color: #ECA8E1;
+    font-family: 'Gang of Three', serif;
+    font-size: 4.5rem;
+}
+
+img[b-odechfuidb] {
+    position: absolute;
+    max-width: 33vw;
+    transform: scale(-1, -1);
+    right: 0px;
+    top: 450px;
+}
 /* _content/WebGUI/Shared/MainLayout.razor.rz.scp.css */
 .page[b-j35uws3xtc] {
     position: relative;

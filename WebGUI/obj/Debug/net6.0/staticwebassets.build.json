@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GnyNQB29+wH6C/xnMPESoSFOH5bIbLUnkyXhGoUP5PA=",
+  "Hash": "MnpZyBblpqr85EKb8Hi4tJZspSN65D8oxAXFii/7VfQ=",
   "Source": "WebGUI",
   "BasePath": "_content/WebGUI",
   "Mode": "Default",
@@ -272,6 +272,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\WebGUI\\wwwroot\\fonts\\go3v2.ttf",
+      "SourceId": "WebGUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\WebGUI\\wwwroot\\",
+      "BasePath": "_content/WebGUI",
+      "RelativePath": "fonts/go3v2.ttf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\fonts\\go3v2.ttf"
+    },
+    {
       "Identity": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\WebGUI\\wwwroot\\image\\attackers\\oni.png",
       "SourceId": "WebGUI",
       "SourceType": "Discovered",
@@ -457,6 +474,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\grass.png"
+    },
+    {
+      "Identity": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\WebGUI\\wwwroot\\image\\UI\\branch.svg",
+      "SourceId": "WebGUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\WebGUI\\wwwroot\\",
+      "BasePath": "_content/WebGUI",
+      "RelativePath": "image/UI/branch.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\UI\\branch.svg"
     },
     {
       "Identity": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\WebGUI\\wwwroot\\psd\\f_down_right_turn.psd",
