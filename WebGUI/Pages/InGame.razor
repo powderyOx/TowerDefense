@@ -1,6 +1,7 @@
 @page "/map/{SavedGameId:int}"
 @using Model.Entities.Map
 @using Domain.Repositories.Interfaces
+@using IKriv.Threading.Tasks
 @using Model.Entities
 @inherits LayoutComponentBase
 @inject IMapRepository _mapRepository
@@ -11,7 +12,7 @@
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 
-<div style="text-align: center ">
+<div style="text-align: center">
     @if (sg is not null) {
         <div class="m-auto">
             <ul class="list-group list-group-horizontal">
@@ -21,38 +22,82 @@
                 <li class="list-group-item">@sg.Money</li>
             </ul>
         </div>
-    }
-    <MudLayout> <!-- alles in Mudlyout geht -->
-        <MudMainContent>
-            @if (FieldList is not null) {
-                @for (int i = 0; i < FieldList.GetMaxX(); i++) {
-                    @for (int j = 0; j < FieldList.GetMinY(); j++) {
-                        @if (FieldList.Contains(i, j)) {
-                            <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image"/>
+
+        <MudLayout>
+            <!-- alles in Mudlyout geht -->
+            <MudMainContent>
+                @if (FieldList is not null) {
+                    @for (int i = 0; i < FieldList.GetMaxX(); i++) {
+                        @for (int j = 0; j < FieldList.GetMinY(); j++) {
+                            // Map
+                            
+                            // Defender
+                            @if (MapEntityList.Exists(me => me.X == i && me.Y == j)) {
+                                foreach (var me in MapEntityList.Where(me => me.X == i && me.Y == j)) {
+                                    <img src="@me.AEntity.GetEntityType()" alt="@me.AEntity.GetType().Name.ToLower()" class="entity" style="@($"background-image: url('{FieldList.GetField(i, j).GetFieldType()}')")"/>
+                                }
+                            }
+                            else if (FieldList.Contains(i, j)) {
+                                <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image" class="floor"/>
+                            }
                         }
+                        <br/>
                     }
-                    <br/>
                 }
-            }
-        </MudMainContent>
-    </MudLayout>
+            </MudMainContent>
+        </MudLayout>
+    }
 </div>
 
 @code {
+
     [Parameter]
     public int SavedGameId { get; set; } // geht
 
     public FieldList FieldList { get; set; } // geht
 
-    public SavedGame sg { get; set; } 
+    public MapEntityList MapEntityList { get; set; }
+    
+    public SavedGame sg { get; set; }
+
+    public List<AField> Path { get; set; }
 
     protected override async Task OnParametersSetAsync() {
-        var data = await _sgRepository.ReadGraphAsync(SavedGameId); // geht
+        sg = await _sgRepository.ReadGraphAsync(SavedGameId); // geht
 
-        var map = await _mapRepository.ReadGraphAsync(data.MapId); // geht
-        
+        var map = await _mapRepository.ReadGraphAsync(sg.MapId); // geht
+        Path = map.GetPath();
+
         if (map is not null) {
             FieldList = new FieldList(map.Fields); // geht
+        }
+
+        if (sg is not null) {
+            MapEntityList = new MapEntityList(sg.MapEntities);
+        }
+
+        foreach (var attacker in MapEntityList.Where(me => me.AEntity is Attacker)) {
+            attacker.X = Path[0].X;
+            attacker.Y = Path[0].Y;
+        }
+        DoStuffOnTimer();
+    }
+
+    private void MoveAttackers() {
+        foreach (var a in MapEntityList.Where(entity => entity is Attacker)) {
+            var next = Path[Path.FindIndex(f => f.X == a.X && f.Y == a.Y) + 1];
+            a.X = next.X;
+            a.Y = next.Y;
+            StateHasChanged();
+        }
+    }
+    
+    async Task DoStuffOnTimer() {
+        using var timer = new TaskTimer(1000).Start();
+        foreach (var task in timer)
+        {
+            await task;
+            MoveAttackers();
         }
     }
 }

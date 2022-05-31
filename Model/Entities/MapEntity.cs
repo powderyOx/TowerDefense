@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model.Entities; 
-[Table("MAP_HAS_ENTITIES")]
+[Table("MAP_HAS_ENTITIES_JT")]
 public class MapEntity {
   
     [Column("ENTITY_ID")]

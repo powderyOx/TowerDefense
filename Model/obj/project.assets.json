@@ -741,19 +741,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\flori\\.nuget\\packages\\": {}
+    "C:\\Users\\Nutzer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\flori\\repos\\TowerDefense\\Model\\Model.csproj",
+      "projectUniqueName": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Model\\Model.csproj",
       "projectName": "Model",
-      "projectPath": "C:\\Users\\flori\\repos\\TowerDefense\\Model\\Model.csproj",
-      "packagesPath": "C:\\Users\\flori\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\flori\\repos\\TowerDefense\\Model\\obj\\",
+      "projectPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Model\\Model.csproj",
+      "packagesPath": "C:\\Users\\Nutzer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\flori\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Nutzer\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

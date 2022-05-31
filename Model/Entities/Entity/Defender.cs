@@ -20,4 +20,9 @@ public class Defender : AEntity {
     [Column("ROUND")]
     [Required]
     public int Round { get; set; }
+    
+    public override string GetEntityType() {
+        return "./image/defenders/" + EntityType + ".png";
+    }
+    
 }

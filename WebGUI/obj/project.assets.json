@@ -265,6 +265,9 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "TaskTimer/1.0.0": {
+        "type": "package"
+      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -724,6 +727,18 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "TaskTimer/1.0.0": {
+      "sha512": "7h9p+jK9Xf2eZV4rin8QzvqjOR9/peWugYRj1fdrNGmwPdeKFV98GXKX2i03uSNUoZv3etBTgMycqkjq7zZpUA==",
+      "type": "package",
+      "path": "tasktimer/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/TaskTimer.cs",
+        "tasktimer.1.0.0.nupkg.sha512",
+        "tasktimer.nuspec"
+      ]
+    },
     "Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
@@ -740,23 +755,24 @@
       "Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.1",
       "Model >= 1.0.0",
-      "Pomelo.EntityFrameworkCore.MySql >= 6.0.1"
+      "Pomelo.EntityFrameworkCore.MySql >= 6.0.1",
+      "TaskTimer >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\flori\\.nuget\\packages\\": {}
+    "C:\\Users\\Nutzer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\WebGUI.csproj",
+      "projectUniqueName": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\WebGUI\\WebGUI.csproj",
       "projectName": "WebGUI",
-      "projectPath": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\WebGUI.csproj",
-      "packagesPath": "C:\\Users\\flori\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\flori\\repos\\TowerDefense\\WebGUI\\obj\\",
+      "projectPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\WebGUI\\WebGUI.csproj",
+      "packagesPath": "C:\\Users\\Nutzer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\WebGUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\flori\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Nutzer\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -768,11 +784,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\flori\\repos\\TowerDefense\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\flori\\repos\\TowerDefense\\Domain\\Domain.csproj"
+            "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\flori\\repos\\TowerDefense\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\flori\\repos\\TowerDefense\\Model\\Model.csproj"
+            "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Model\\Model.csproj"
             }
           }
         }
@@ -796,6 +812,10 @@
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
             "version": "[6.0.1, )"
+          },
+          "TaskTimer": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           }
         },
         "imports": [
