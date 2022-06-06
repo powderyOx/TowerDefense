@@ -87,9 +87,10 @@
             StateHasChanged();
         }
         catch (ArgumentOutOfRangeException e) {
-            a.X = null;
-            a.Y = null;
+            a.X = -1;
+            a.Y = -1;
             sg.HP -= a.AEntity.Damage;
+            StateHasChanged();
         }
     }
 
@@ -100,7 +101,7 @@
             await task;
             i++;
             foreach (var attacker in MapEntityList.Where(e => e.AEntity is Attacker)) {
-                if (i > attacker.StartIndex) MoveAttacker(attacker);
+                if (i > attacker.StartIndex && attacker.X != -1) MoveAttacker(attacker);
             }
         }
     }
