@@ -1,6 +1,7 @@
 @page "/map/{SavedGameId:int}"
 @using Model.Entities.Map
 @using Domain.Repositories.Interfaces
+@using IKriv.Threading.Tasks
 @using Model.Entities
 @inherits LayoutComponentBase
 @inject IMapRepository _mapRepository
@@ -11,7 +12,7 @@
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 
-<div style="text-align: center ">
+<div style="text-align: center">
     @if (sg is not null) {
         <div class="m-auto">
             <ul class="list-group list-group-horizontal">
@@ -28,8 +29,16 @@
                 @if (FieldList is not null) {
                     @for (int i = 0; i < FieldList.GetMaxX(); i++) {
                         @for (int j = 0; j < FieldList.GetMinY(); j++) {
-                            @if (FieldList.Contains(i, j)) {
-                                <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image"/>
+                            // Map
+
+                            // Defender
+                            @if (MapEntityList.Exists(me => me.X == i && me.Y == j)) {
+                                foreach (var me in MapEntityList.Where(me => me.X == i && me.Y == j)) {
+                                    <img src="@me.AEntity.GetEntityType()" alt="@me.AEntity.GetType().Name.ToLower()" class="entity" style="@($"background-image: url('{FieldList.GetField(i, j).GetFieldType()}')")"/>
+                                }
+                            }
+                            else if (FieldList.Contains(i, j)) {
+                                <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image" class="floor"/>
                             }
                         }
                         <br/>
@@ -37,17 +46,7 @@
                 }
             </MudMainContent>
         </MudLayout>
-
-
-        @foreach (var i in sg.MapEntities) {
-            @if (i.X is not null) {
-                <p>@i.X</p>
-                <p>@i.Y</p>
-                <br/>
-            }
-        }
     }
-
 </div>
 
 @code {
@@ -57,16 +56,52 @@
 
     public FieldList FieldList { get; set; } // geht
 
+    public MapEntityList MapEntityList { get; set; }
+
     public SavedGame sg { get; set; }
+
+    public List<AField> Path { get; set; }
 
     protected override async Task OnParametersSetAsync() {
         sg = await _sgRepository.ReadGraphAsync(SavedGameId); // geht
 
         var map = await _mapRepository.ReadGraphAsync(sg.MapId); // geht
+        Path = map.GetPath();
 
         if (map is not null) {
             FieldList = new FieldList(map.Fields); // geht
         }
+
+        if (sg is not null) {
+            MapEntityList = new MapEntityList(sg.MapEntities);
+        }
+        
+        MoveAttackers();
     }
 
+    private void MoveAttacker(MapEntity a) {
+        try {
+            var next = Path[Path.FindIndex(f => f.X == a.X && f.Y == a.Y) + 1];
+            a.X = next.X;
+            a.Y = next.Y;
+            StateHasChanged();
+        }
+        catch (ArgumentOutOfRangeException e) {
+            a.X = null;
+            a.Y = null;
+            sg.HP -= a.AEntity.Damage;
+        }
+    }
+
+    async Task MoveAttackers() {
+        using var timer = new TaskTimer(1000).Start();
+        var i = 0;
+        foreach (var task in timer) {
+            await task;
+            i++;
+            foreach (var attacker in MapEntityList.Where(e => e.AEntity is Attacker)) {
+                if (i > attacker.StartIndex) MoveAttacker(attacker);
+            }
+        }
+    }
 }

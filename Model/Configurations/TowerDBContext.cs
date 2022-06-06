@@ -16,8 +16,9 @@ public class TowerDbContext : DbContext {
     public DbSet<MapEntity> MapEntities { get; set; }
     public DbSet<SavedGame> SavedGames { get; set; }
     public DbSet<Round> Rounds { get; set; }
-    
     public DbSet<AField> Fields { get; set; }
+
+    //Fields
     public DbSet<DownLeftTurn> DownLeftTurns { get; set; }
     public DbSet<DownRightTurn> DownRightTurns { get; set; }
     public DbSet<EmptyField> EmptyFields { get; set; }
@@ -25,29 +26,24 @@ public class TowerDbContext : DbContext {
     public DbSet<UpLeftTurn> UpLeftTurns { get; set; }
     public DbSet<UpRightTurn> UpRightTurns { get; set; }
     public DbSet<VerticalStraight> VerticalStraights { get; set; }
-
     
     public TowerDbContext(DbContextOptions<TowerDbContext> dbContextOptions) : base(dbContextOptions) { }
 
     protected override void OnModelCreating(ModelBuilder builder) {
         
-        builder.Entity<Attacker>()
-            .HasIndex(a => a.Name)
-            .IsUnique();
+        builder.Entity<AEntity>()
+            .Property(e => e.EntityType)
+            .HasConversion<string>();
         
-        builder.Entity<MapEntity>().HasKey(m => new {
-            m.EntityId,
-            m.SavedGameId
-        });
         builder.Entity<MapEntity>()
-            .HasOne(mp => mp.SavedGame)
+            .HasOne(me => me.SavedGame)
             .WithMany(s => s.MapEntities)
-            .HasForeignKey(mp => mp.SavedGameId);
+            .HasForeignKey(me => me.SavedGameId);
 
         builder.Entity<MapEntity>()
-            .HasOne(mp => mp.AEntity)
-            .WithMany(ae => ae.MapEntities)
-            .HasForeignKey(mp => mp.EntityId);
+            .HasOne(me => me.AEntity)
+            .WithMany(e => e.MapEntities)
+            .HasForeignKey(me => me.EntityId);
 
         builder.Entity<SavedGame>()
             .HasIndex(a => a.Name)
@@ -58,8 +54,10 @@ public class TowerDbContext : DbContext {
             .WithMany(m => m.Fields)
             .HasForeignKey(f => f.MapId);
 
-        builder.Entity<AField>()
-            .HasKey(f => new { f.X, f.Y });
+        builder.Entity<AField>().HasKey(f => new {
+            f.X, 
+            f.Y
+        });
         
         builder.Entity<AField>()
             .HasDiscriminator<string>("FIELD_TYPE")
@@ -71,6 +69,6 @@ public class TowerDbContext : DbContext {
             .HasValue<UpRightTurn>("UP_RIGHT_TURN")
             .HasValue<VerticalStraight>("VERTICAL_STRAIGHT");
 
-        
+
     }
 }
