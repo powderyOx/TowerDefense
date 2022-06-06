@@ -30,7 +30,7 @@
                     @for (int i = 0; i < FieldList.GetMaxX(); i++) {
                         @for (int j = 0; j < FieldList.GetMinY(); j++) {
                             // Map
-                            
+
                             // Defender
                             @if (MapEntityList.Exists(me => me.X == i && me.Y == j)) {
                                 foreach (var me in MapEntityList.Where(me => me.X == i && me.Y == j)) {
@@ -57,7 +57,7 @@
     public FieldList FieldList { get; set; } // geht
 
     public MapEntityList MapEntityList { get; set; }
-    
+
     public SavedGame sg { get; set; }
 
     public List<AField> Path { get; set; }
@@ -75,29 +75,33 @@
         if (sg is not null) {
             MapEntityList = new MapEntityList(sg.MapEntities);
         }
-
-        foreach (var attacker in MapEntityList.Where(me => me.AEntity is Attacker)) {
-            attacker.X = Path[0].X;
-            attacker.Y = Path[0].Y;
-        }
-        DoStuffOnTimer();
+        
+        MoveAttackers();
     }
 
-    private void MoveAttackers() {
-        foreach (var a in MapEntityList.Where(entity => entity is Attacker)) {
+    private void MoveAttacker(MapEntity a) {
+        try {
             var next = Path[Path.FindIndex(f => f.X == a.X && f.Y == a.Y) + 1];
             a.X = next.X;
             a.Y = next.Y;
             StateHasChanged();
         }
+        catch (ArgumentOutOfRangeException e) {
+            a.X = null;
+            a.Y = null;
+            sg.HP -= a.AEntity.Damage;
+        }
     }
-    
-    async Task DoStuffOnTimer() {
+
+    async Task MoveAttackers() {
         using var timer = new TaskTimer(1000).Start();
-        foreach (var task in timer)
-        {
+        var i = 0;
+        foreach (var task in timer) {
             await task;
-            MoveAttackers();
+            i++;
+            foreach (var attacker in MapEntityList.Where(e => e.AEntity is Attacker)) {
+                if (i > attacker.StartIndex) MoveAttacker(attacker);
+            }
         }
     }
 }
