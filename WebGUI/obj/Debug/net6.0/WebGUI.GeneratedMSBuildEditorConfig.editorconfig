@@ -8,57 +8,57 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebGUI
 build_property.RootNamespace = WebGUI
-build_property.ProjectDir = C:\Users\Nutzer\source\repos\TowerDefense\TowerDefense\WebGUI\
+build_property.ProjectDir = C:\Users\adame\source\repose\TowerDefense\TowerDefense\WebGUI\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Nutzer\source\repos\TowerDefense\TowerDefense\WebGUI
+build_property.MSBuildProjectDirectory = C:\Users\adame\source\repose\TowerDefense\TowerDefense\WebGUI
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/App.razor]
+[C:/Users/adame/source/repose/TowerDefense/TowerDefense/WebGUI/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Pages/InGame.razor]
+[C:/Users/adame/source/repose/TowerDefense/TowerDefense/WebGUI/Pages/InGame.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5HYW1lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Shared/SurveyPrompt.razor]
+[C:/Users/adame/source/repose/TowerDefense/TowerDefense/WebGUI/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/_Imports.razor]
+[C:/Users/adame/source/repose/TowerDefense/TowerDefense/WebGUI/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Pages/Homepage.razor]
+[C:/Users/adame/source/repose/TowerDefense/TowerDefense/WebGUI/Pages/Homepage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZXBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-e59vrvbsdi
 
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Pages/NewGame.razor]
+[C:/Users/adame/source/repose/TowerDefense/TowerDefense/WebGUI/Pages/NewGame.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3R2FtZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-e69fkt9r7x
 
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Pages/SavedGameList.razor]
+[C:/Users/adame/source/repose/TowerDefense/TowerDefense/WebGUI/Pages/SavedGameList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2F2ZWRHYW1lTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-odechfuidb
 
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Shared/MainLayout.razor]
+[C:/Users/adame/source/repose/TowerDefense/TowerDefense/WebGUI/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-j35uws3xtc
 
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Shared/NavMenu.razor]
+[C:/Users/adame/source/repose/TowerDefense/TowerDefense/WebGUI/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-u15faa9dwh
 
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Pages/Error.cshtml]
+[C:/Users/adame/source/repose/TowerDefense/TowerDefense/WebGUI/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Pages/_Host.cshtml]
+[C:/Users/adame/source/repose/TowerDefense/TowerDefense/WebGUI/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nutzer/source/repos/TowerDefense/TowerDefense/WebGUI/Pages/_Layout.cshtml]
+[C:/Users/adame/source/repose/TowerDefense/TowerDefense/WebGUI/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

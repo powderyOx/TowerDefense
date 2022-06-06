@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\WebGUI\\WebGUI.csproj": {}
+    "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\WebGUI\\WebGUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Domain\\Domain.csproj": {
+    "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Nutzer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\adame\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nutzer\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\adame\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -26,8 +26,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Model\\Model.csproj"
+              "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Model\\Model.csproj"
               }
             }
           }
@@ -62,21 +62,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.105\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Model\\Model.csproj": {
+    "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\Nutzer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Model\\obj\\",
+        "projectPath": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\adame\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nutzer\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\adame\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -126,21 +126,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.105\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\WebGUI\\WebGUI.csproj": {
+    "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\WebGUI\\WebGUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\WebGUI\\WebGUI.csproj",
+        "projectUniqueName": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\WebGUI\\WebGUI.csproj",
         "projectName": "WebGUI",
-        "projectPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\WebGUI\\WebGUI.csproj",
-        "packagesPath": "C:\\Users\\Nutzer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\WebGUI\\obj\\",
+        "projectPath": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\WebGUI\\WebGUI.csproj",
+        "packagesPath": "C:\\Users\\adame\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\WebGUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nutzer\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\adame\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -152,11 +152,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Domain\\Domain.csproj"
+              "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Nutzer\\source\\repos\\TowerDefense\\TowerDefense\\Model\\Model.csproj"
+              "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\adame\\source\\repose\\TowerDefense\\TowerDefense\\Model\\Model.csproj"
               }
             }
           }
@@ -204,7 +204,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.105\\RuntimeIdentifierGraph.json"
         }
       }
     }

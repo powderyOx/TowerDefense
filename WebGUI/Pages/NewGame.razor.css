@@ -17,7 +17,7 @@ h1 {
 img {
     position: absolute;
     max-width: 33vw;
-    transform: scale(-1, -1);
+    max-height: 60vh;
     right: 0px;
-    top: 450px;
+    top: 300px;
 }

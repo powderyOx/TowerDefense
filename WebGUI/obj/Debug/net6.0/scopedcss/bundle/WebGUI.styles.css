@@ -42,9 +42,9 @@ h1[b-e69fkt9r7x] {
 img[b-e69fkt9r7x] {
     position: absolute;
     max-width: 33vw;
-    transform: scale(-1, -1);
+    max-height: 60vh;
     right: 0px;
-    top: 450px;
+    top: 300px;
 }
 /* _content/WebGUI/Pages/SavedGameList.razor.rz.scp.css */
 @font-face {

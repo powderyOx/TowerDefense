@@ -20,7 +20,7 @@
 </ul>*@
 <img src="/image/UI/branch.svg"/>
 
-<EditForm Model="@Game" class="form" style="position:absolute; left: 50%; transform: translateX(-50%); top: 50vh; list-style: none;" class="text-center" OnValidSubmit="async () => await CreateGame()">
+<EditForm Model="@Game" class="form text-center" style="position:absolute; left: 50%; transform: translateX(-50%); top: 50vh; list-style: none;" OnValidSubmit="async () => await CreateGame()">
     <DataAnnotationsValidator/>
     <InputText id="strength-input" class="form-text" style="font-size: 2rem" @bind-Value="@Game.Name"/>
     <ValidationMessage For="() => Game.Name"></ValidationMessage>
