@@ -18,9 +18,9 @@ h1[b-e59vrvbsdi] {
 img[b-e59vrvbsdi] {
     position: absolute;
     max-width: 33vw;
-    transform: scale(-1, -1);
+    max-height: 60vh;
     right: 0px;
-    top: 450px;
+    top: 300px;
 }
 /* _content/WebGUI/Pages/NewGame.razor.rz.scp.css */
 @font-face {
@@ -66,9 +66,9 @@ h1[b-odechfuidb] {
 img[b-odechfuidb] {
     position: absolute;
     max-width: 33vw;
-    transform: scale(-1, -1);
+    max-height: 60vh;
     right: 0px;
-    top: 450px;
+    top: 300px;
 }
 /* _content/WebGUI/Shared/MainLayout.razor.rz.scp.css */
 .page[b-j35uws3xtc] {

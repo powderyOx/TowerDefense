@@ -34,11 +34,6 @@ public class TowerDbContext : DbContext {
         builder.Entity<AEntity>()
             .Property(e => e.EntityType)
             .HasConversion<string>();
-
-        builder.Entity<MapEntity>().HasKey(me => new {
-            me.EntityId,
-            me.SavedGameId
-        });
         
         builder.Entity<MapEntity>()
             .HasOne(me => me.SavedGame)

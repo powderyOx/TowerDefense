@@ -11,8 +11,8 @@ using Model.Configurations;
 namespace Model.Migrations
 {
     [DbContext(typeof(TowerDbContext))]
-    [Migration("20220529192401_init")]
-    partial class init
+    [Migration("20220606193902_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -84,6 +84,11 @@ namespace Model.Migrations
 
             modelBuilder.Entity("Model.Entities.MapEntity", b =>
                 {
+                    b.Property<int>("MapEntityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("MAP_ENTITY_ID");
+
                     b.Property<int>("EntityId")
                         .HasColumnType("int")
                         .HasColumnName("ENTITY_ID");
@@ -91,6 +96,10 @@ namespace Model.Migrations
                     b.Property<int>("SavedGameId")
                         .HasColumnType("int")
                         .HasColumnName("SAVED_GAME_ID");
+
+                    b.Property<int?>("StartIndex")
+                        .HasColumnType("int")
+                        .HasColumnName("START_INDEX");
 
                     b.Property<int?>("X")
                         .HasColumnType("int")
@@ -100,7 +109,9 @@ namespace Model.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Y");
 
-                    b.HasKey("EntityId", "SavedGameId");
+                    b.HasKey("MapEntityId");
+
+                    b.HasIndex("EntityId");
 
                     b.HasIndex("SavedGameId");
 

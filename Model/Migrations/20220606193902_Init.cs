@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Model.Migrations
 {
-    public partial class init : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -156,14 +156,17 @@ namespace Model.Migrations
                 name: "MAP_HAS_ENTITIES_JT",
                 columns: table => new
                 {
+                    MAP_ENTITY_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     ENTITY_ID = table.Column<int>(type: "int", nullable: false),
                     SAVED_GAME_ID = table.Column<int>(type: "int", nullable: false),
                     X = table.Column<int>(type: "int", nullable: true),
-                    Y = table.Column<int>(type: "int", nullable: true)
+                    Y = table.Column<int>(type: "int", nullable: true),
+                    START_INDEX = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MAP_HAS_ENTITIES_JT", x => new { x.ENTITY_ID, x.SAVED_GAME_ID });
+                    table.PrimaryKey("PK_MAP_HAS_ENTITIES_JT", x => x.MAP_ENTITY_ID);
                     table.ForeignKey(
                         name: "FK_MAP_HAS_ENTITIES_JT_ENTITIES_BT_ENTITY_ID",
                         column: x => x.ENTITY_ID,
@@ -188,6 +191,11 @@ namespace Model.Migrations
                 name: "IX_FIELDS_ST_MAP_ID",
                 table: "FIELDS_ST",
                 column: "MAP_ID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MAP_HAS_ENTITIES_JT_ENTITY_ID",
+                table: "MAP_HAS_ENTITIES_JT",
+                column: "ENTITY_ID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MAP_HAS_ENTITIES_JT_SAVED_GAME_ID",
