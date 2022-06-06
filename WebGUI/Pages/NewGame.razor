@@ -5,14 +5,27 @@
 @inject ILogger<SavedGame> _logger
 @inject NavigationManager _navManager
 
-<h3>NewGame</h3>
+<div style="position: absolute; top: 20vh; left: 25%; max-width: 80vw; ">
+    <div style="width: 200px; height: 200px; shape-outside: circle(); clip-path: circle(); background-color: #EE5168; position:absolute; top: -20%; left: -10%; z-index: -1;"></div>
+    <h1 style="font-size: 200px; max-width: 50vw">NEW GAME</h1>
+</div>
 
-<EditForm Model="@Game" class="form" OnValidSubmit="async () => await CreateGame()">
+@*<ul style="position:absolute; left: 50%; transform: translateX(-50%); top: 50vh; list-style: none;" class="text-center">
+    <li>
+        <a href="newgame" class="text-decoration-none japan"> NEW GAME </a>
+    </li>
+    <li>
+        <a href="savedgames" class="text-decoration-none japan"> LOAD GAME </a>
+    </li>
+</ul>*@
+<img src="/image/UI/branch.svg"/>
+
+<EditForm Model="@Game" class="form text-center" style="position:absolute; left: 50%; transform: translateX(-50%); top: 50vh; list-style: none;" OnValidSubmit="async () => await CreateGame()">
     <DataAnnotationsValidator/>
-    <InputText id="strength-input" class="form-text" @bind-Value="@Game.Name"/>
+    <InputText id="strength-input" class="form-text" style="font-size: 2rem" @bind-Value="@Game.Name"/>
     <ValidationMessage For="() => Game.Name"></ValidationMessage>
     <p class="text-danger">@message</p>
-    <button type="submit" class="btn">Submit</button>
+    <button type="submit" class="btn japan">Submit</button>
 </EditForm>
 
 @code {

@@ -68,7 +68,5 @@ public class TowerDbContext : DbContext {
             .HasValue<UpLeftTurn>("UP_LEFT_TURN")
             .HasValue<UpRightTurn>("UP_RIGHT_TURN")
             .HasValue<VerticalStraight>("VERTICAL_STRAIGHT");
-
-
     }
 }
