@@ -1,5 +1,4 @@
 ﻿INSERT INTO towerdefense.maps (MAP_ID) VALUES (1);
-INSERT INTO towerdefense.maps (MAP_ID) VALUES (2);
 
 INSERT INTO towerdefense.fields_st (X, Y, MAP_ID, FIELD_TYPE) VALUES (0, 0, 1, 'EMPTY_FIELD');
 INSERT INTO towerdefense.fields_st (X, Y, MAP_ID, FIELD_TYPE) VALUES (0, 1, 1, 'EMPTY_FIELD');
@@ -107,9 +106,13 @@ INSERT INTO towerdefense.entities_bt (DAMAGE, ENTITY_TYPE) VALUES (10, 'ONI');
 INSERT INTO towerdefense.entities_bt (DAMAGE, ENTITY_TYPE) VALUES (10, 'ARCHER');
 INSERT INTO towerdefense.entities_bt (DAMAGE, ENTITY_TYPE) VALUES (15, 'LONGBOW_ARCHER');
 INSERT INTO towerdefense.saved_games (SAVED_GAME_ID,MAP_ID ,MONEY, ROUND, NAME, HP) VALUES (1, 1,100, 1, 'game1', 100);
-INSERT INTO towerdefense.map_has_entities_jt (ENTITY_ID, SAVED_GAME_ID) VALUES (1, 1);
 INSERT INTO towerdefense.defenders (ENTITY_ID, FIRE_RATE, `RANGE`, COST, ROUND) VALUES (2, 2, 4, 20, 1);
 INSERT INTO towerdefense.defenders (ENTITY_ID, FIRE_RATE, `RANGE`, COST, ROUND) VALUES (3, 1, 6, 25, 1);
 INSERT INTO towerdefense.attackers (ENTITY_ID, SPEED, HP, SHIELD, LOOT, ROUND_ID) VALUES (1, 3, 60, 0, 15, 1);
+
+INSERT INTO towerdefense.map_has_entities_jt (ENTITY_ID, SAVED_GAME_ID, START_INDEX) VALUES (1, 1, 1);
+INSERT INTO towerdefense.map_has_entities_jt (ENTITY_ID, SAVED_GAME_ID, START_INDEX) VALUES (1, 1, 2);
+INSERT INTO towerdefense.map_has_entities_jt (ENTITY_ID, SAVED_GAME_ID, START_INDEX) VALUES (1, 1, 3);
+
 INSERT INTO towerdefense.map_has_entities_jt (ENTITY_ID, SAVED_GAME_ID, X, Y) VALUES (2, 1, 2, 2);
 INSERT INTO towerdefense.map_has_entities_jt (ENTITY_ID, SAVED_GAME_ID, X, Y) VALUES (3, 1, 2, 3);

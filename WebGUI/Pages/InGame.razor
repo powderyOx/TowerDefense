@@ -89,8 +89,10 @@
         catch (ArgumentOutOfRangeException e) {
             a.X = -1;
             a.Y = -1;
-            sg.HP -= a.AEntity.Damage;
-            StateHasChanged();
+            if (sg.HP > 0) {
+                sg.HP -= a.AEntity.Damage;
+                StateHasChanged();
+            }
         }
     }
 
