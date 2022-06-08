@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Gang of Three';
+    src: url('/fonts/go3v2.ttf') format('truetype');
+}
+
+h1 {
+    color: #262626;
+    font-family: 'Gang of Three', serif;
+}
+
+.gameField {
+    position: absolute;
+    top: 20vh;
+    left: 35%;
+}

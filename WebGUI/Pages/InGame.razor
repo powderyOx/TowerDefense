@@ -12,6 +12,10 @@
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 
+<div style="position: absolute; top: 5vh; left: 33%; ">
+    <div style="width: 100px; height: 100px; shape-outside: circle(); clip-path: circle(); background-color: #EE5168; position:absolute; top: -20%; left: -6%; z-index: -1;"></div>
+    <h1 style="font-size: 100px;">Tower Defense</h1>
+</div>
 <div style="text-align: center">
     @if (sg is not null) {
         <div class="m-auto">
@@ -22,30 +26,31 @@
                 <li class="list-group-item">@sg.Money</li>
             </ul>
         </div>
+        <div class="gameField">
+            <MudLayout>
+                <!-- alles in Mudlyout geht -->
+                <MudMainContent>
+                    @if (FieldList is not null) {
+                        @for (int i = 0; i < FieldList.GetMaxX(); i++) {
+                            @for (int j = 0; j < FieldList.GetMinY(); j++) {
+                                // Map
 
-        <MudLayout>
-            <!-- alles in Mudlyout geht -->
-            <MudMainContent>
-                @if (FieldList is not null) {
-                    @for (int i = 0; i < FieldList.GetMaxX(); i++) {
-                        @for (int j = 0; j < FieldList.GetMinY(); j++) {
-                            // Map
-
-                            // Defender
-                            @if (MapEntityList.Exists(me => me.X == i && me.Y == j)) {
-                                foreach (var me in MapEntityList.Where(me => me.X == i && me.Y == j)) {
-                                    <img src="@me.AEntity.GetEntityType()" alt="@me.AEntity.GetType().Name.ToLower()" class="entity" style="@($"background-image: url('{FieldList.GetField(i, j).GetFieldType()}')")"/>
+                                // Defender
+                                @if (MapEntityList.Exists(me => me.X == i && me.Y == j)) {
+                                    foreach (var me in MapEntityList.Where(me => me.X == i && me.Y == j)) {
+                                        <img src="@me.AEntity.GetEntityType()" alt="@me.AEntity.GetType().Name.ToLower()" class="entity" style="@($"background-image: url('{FieldList.GetField(i, j).GetFieldType()}')")"/>
+                                    }
+                                }
+                                else if (FieldList.Contains(i, j)) {
+                                    <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image" class="floor"/>
                                 }
                             }
-                            else if (FieldList.Contains(i, j)) {
-                                <img src="@FieldList.GetField(i, j).GetFieldType()" alt="image" class="floor"/>
-                            }
+                            <br/>
                         }
-                        <br/>
                     }
-                }
-            </MudMainContent>
-        </MudLayout>
+                </MudMainContent>
+            </MudLayout>
+            </div>
     }
 </div>
 
@@ -75,7 +80,7 @@
         if (sg is not null) {
             MapEntityList = new MapEntityList(sg.MapEntities);
         }
-        
+
         MoveAttackers();
     }
 
@@ -107,4 +112,5 @@
             }
         }
     }
+
 }
